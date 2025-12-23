@@ -1,0 +1,18 @@
+# ========================================
+# Cloudflare Pages Configuration
+# ========================================
+
+name = "ai-training-ppt"
+compatibility_date = "2024-01-01"
+
+# Pages 项目配置
+[build]
+# 方案 1: 使用兼容性脚本 (推荐)
+command = "./build.sh"
+# 方案 2: 如果方案 1 失败,在控制台手动设置: python tools/build.py
+cwd = ""
+watch_dirs = ["src", "tools"]
+
+[build.upload]
+format = "directory"
+dir = "dist"

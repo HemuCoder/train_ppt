@@ -60,13 +60,30 @@ http-server -p 8000
 
 ### Cloudflare Pages 部署
 
-1. **构建配置**:
-   - Build command: `python3 tools/build.py`
-   - Build output directory: `dist`
-   - Root directory: `/`
+#### 方式 1: 自动配置 (推荐)
 
-2. **环境要求**:
-   - Python 3.x (Cloudflare Pages 默认支持)
+项目已包含 `wrangler.toml` 配置文件,Cloudflare Pages 会自动识别构建配置:
+
+1. 将代码推送到 GitHub
+2. 在 Cloudflare Pages 控制台连接你的 GitHub 仓库
+3. Cloudflare 会自动读取 `wrangler.toml` 并执行构建
+
+#### 方式 2: 手动配置
+
+如果自动配置失败,在 Cloudflare Pages 控制台手动设置:
+
+- **Framework preset**: None
+- **Build command**: `python tools/build.py` 或 `./build.sh`
+- **Build output directory**: `dist`
+- **Root directory**: `/` (留空)
+- **Environment variables**: 无需配置
+
+#### 故障排查
+
+如果遇到 `Output directory "dist" not found` 错误:
+1. 确认已设置 **Build command**
+2. 检查构建日志,确认 Python 命令执行成功
+3. 如果 `./build.sh` 失败,尝试使用 `python tools/build.py`
 
 ### 其他静态托管平台
 
