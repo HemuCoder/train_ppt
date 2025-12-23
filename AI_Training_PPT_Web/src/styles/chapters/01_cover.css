@@ -1,0 +1,104 @@
+/* 封面特定 */
+.cover-page {
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 80px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 封面背景装饰 - 点阵纹理 */
+.cover-bg-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(var(--c-divider) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+/* 封面背景装饰 - 弥散光斑 */
+.cover-bg-orb {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    top: -200px;
+    right: -200px;
+    z-index: 0;
+    animation: floatOrb 10s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-30px, 30px);
+    }
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cover-title {
+    font-size: 52px;
+    color: var(--c-primary-900);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.cover-subtitle {
+    font-size: 24px;
+    color: var(--c-text-2);
+    margin-bottom: 30px;
+    max-width: 800px;
+    line-height: 1.5;
+}
+
+/* 讲师信息 */
+.cover-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.cover-author-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--c-surface-2);
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: var(--sh-brand-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: var(--c-primary);
+}
+
+.cover-meta {
+    font-size: 15px;
+    color: var(--c-text-2);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 24px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--c-border);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}

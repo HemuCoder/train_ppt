@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!-- Chapter 3: PPT 智能生成 -->
+<!-- 
+    Structure:
+    1. Cover
+    2. One-Click Tools (NotebookLLM, Genspark)
+    3. Core Pain Points & Value
+    4. Method 1: Structure Generation
+    5. Method 2: Optimization
+    6. Visuals: Napkin.ai
+    7. Human-AI Division
+-->
+
+
+
+<!-- Slide 7: Chapter 3 Title -->
+<div class="slide"
+    style="justify-content:center; align-items:center; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第三章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">PPT：从结构到表达的效率升级</h2>
+</div>
+
+<!-- Slide 8: AI 一键生成 PPT 工具推荐 -->
+<div class="slide">
+    <div class="header" style="margin-bottom: 10px;">
+        <h1>01. AI 一键生成 PPT：路径与工具</h1>
+        <div class="header-sub">Three Technical Paths & Two Best Choices</div>
+    </div>
+
+    <!-- 顶部：三种技术流派分类 (认知框架) - 紧凑版 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border);">
+            <div style="font-weight: 700; color: var(--c-purple); margin-bottom: 2px;">🖼️ 图像模型生成</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：NanoBanana / NotebookLLM</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：极美 | 缺点：<span
+                    style="color:var(--c-red);">不可改</span></div>
+        </div>
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border);">
+            <div style="font-weight: 700; color: var(--c-primary); margin-bottom: 2px;">💻 前端代码生成</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：Genspark / Skywork</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：交互 | 缺点：<span
+                    style="color:var(--c-amber-600);">固化</span></div>
+        </div>
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border); opacity: 0.6;">
+            <div style="font-weight: 700; color: var(--c-text); margin-bottom: 2px;">📝 文本+样式嵌套</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：Kimi / 夸克</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：极速 | 缺点：图文弱</div>
+        </div>
+    </div>
+
+    <!-- 中部：两大推荐产品 (实战对比) - 紧凑版 -->
+    <div class="tools-grid"
+        style="flex: 1; align-items: stretch; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 20px; min-height: 0;">
+        <!-- NotebookLLM 卡片 -->
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; padding: 12px; margin-bottom: 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h3 style="display:flex; align-items:center; gap:6px; margin:0; font-size: 16px;">
+                    <span style="font-size:18px;">📘</span> NotebookLLM
+                </h3>
+                <span class="tag"
+                    style="background: var(--c-purple); color: white; padding: 2px 6px; font-size: 10px;">图像生成</span>
+            </div>
+
+            <div style="font-size: 12px; margin-bottom: 8px; color: var(--c-text-2); line-height: 1.4;">
+                <strong>特性：</strong>效果精美。<strong style="color: var(--c-red);">痛点：生成即图片，不可改。</strong>
+            </div>
+
+            <div
+                style="background: var(--c-surface-2); padding: 6px; border-radius: 4px; font-size: 11px; margin-bottom: 8px; border-left: 2px solid var(--c-amber);">
+                <strong>💡 关键：</strong>必须确保上传文本<strong>100% 准确</strong>。
+            </div>
+
+            <div style="font-size: 11px; color: var(--c-text-3); margin-bottom: 6px;">
+                步骤：上传报告 → 演示 icon → 输入风格
+            </div>
+
+            <div class="img-content"
+                style="flex: 1; min-height: 80px; overflow: hidden; border-radius: 6px; border: 1px solid var(--c-border);">
+                <img src="../image/notebookLLM.png" alt="NotebookLLM Interface"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Genspark 卡片 -->
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; padding: 12px; margin-bottom: 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h3 style="display:flex; align-items:center; gap:6px; margin:0; font-size: 16px;">
+                    <span style="font-size:18px;">✨</span> Genspark
+                </h3>
+                <span class="tag"
+                    style="background: var(--c-primary); color: white; padding: 2px 6px; font-size: 10px;">代码生成</span>
+            </div>
+
+            <div style="font-size: 12px; margin-bottom: 8px; color: var(--c-text-2); line-height: 1.4;">
+                <strong>特性：</strong>生成网页可编辑。<strong style="color: var(--c-amber-600);">限制：收费/容器固化。</strong>
+            </div>
+
+            <div
+                style="background: var(--c-surface-2); padding: 6px; border-radius: 4px; font-size: 11px; margin-bottom: 8px; border-left: 2px solid var(--c-primary);">
+                <strong>💡 用途：</strong>快速出 Demo / 灵感参考。
+            </div>
+
+            <div style="font-size: 11px; color: var(--c-text-3); margin-bottom: 6px;">
+                步骤：侧边栏 AI Slides → 输入提示词
+            </div>
+
+            <div class="img-content"
+                style="flex: 1; min-height: 80px; overflow: hidden; border-radius: 6px; border: 1px solid var(--c-border);">
+                <img src="../image/genspark.png" alt="Genspark Interface"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部：逻辑转折 (The Hook) - 紧凑版 -->
+    <div
+        style="background: linear-gradient(90deg, var(--c-surface-2) 0%, white 100%); border-left: 4px solid var(--c-primary); padding: 8px 15px; border-radius: 0 6px 6px 0; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0;">
+        <div style="color: var(--c-text); font-size: 13px;">
+            <span style="font-weight: bold; color: var(--c-primary);">透过工具看本质：</span>
+            逻辑都是：<strong>理解内容 <i data-lucide="arrow-right" style="width:10px; display:inline;"></i> 梳理结构 <i
+                    data-lucide="arrow-right" style="width:10px; display:inline;"></i> 匹配版式</strong>
+        </div>
+        <div style="font-size: 12px; color: var(--c-text-2); display: flex; align-items: center; gap: 5px;">
+            掌握底层逻辑，徒手搭建更自由的 PPT
+            <i data-lucide="arrow-right-circle" style="color: var(--c-primary); width: 14px;"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: AI 辅助 PPT 制作的标准工作流 -->
+<div class="slide">
+    <div class="header">
+        <h1>02. AI 辅助 PPT 制作的标准工作流</h1>
+        <div class="header-sub">The Standard Workflow: From Structure to Slide</div>
+    </div>
+
+    <!-- 核心理念: 分而治之 -->
+    <div style="text-align:center; margin-bottom: 30px;">
+        <div style="font-size: 20px; font-weight: 300; color: var(--c-text-2);">
+            告别"打开 PPT 对着空白发呆"<br>
+            采用<span style="font-weight: 700; color: var(--c-primary);">「分而治之」</span>的策略，将 PPT 拆解为四个独立步骤
+        </div>
+    </div>
+
+    <!-- 流程图容器 -->
+    <div style="display: flex; gap: 20px; align-items: stretch; justify-content: center; height: 360px;">
+
+        <!-- Step 1: 框架 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-purple); padding: 20px 15px;">
+            <div
+                style="background:var(--c-purple); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                1</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">生成框架<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Structure)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    输入主题与目标<br>
+                    ↓<br>
+                    <strong>生成全篇大纲</strong><br>
+                    <span style="font-size:12px; color:var(--c-purple);">(定骨架)</span>
+                </p>
+            </div>
+            <i data-lucide="layout-list" style="color:var(--c-purple); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 2: 模块 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-blue-400); padding: 20px 15px;">
+            <div
+                style="background:var(--c-blue-400); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                2</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">细化模块<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Modules)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    按章节拆解<br>
+                    ↓<br>
+                    <strong>梳理核心观点</strong><br>
+                    <span style="font-size:12px; color:var(--c-blue-400);">(填血肉)</span>
+                </p>
+            </div>
+            <i data-lucide="package-open" style="color:var(--c-blue-400); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 3: 内容 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-primary); padding: 20px 15px;">
+            <div
+                style="background:var(--c-primary); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                3</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">生成页面内容<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Content)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    针对单页<br>
+                    ↓<br>
+                    <strong>写逐字稿/金句</strong><br>
+                    <span style="font-size:12px; color:var(--c-primary);">(磨细节)</span>
+                </p>
+            </div>
+            <i data-lucide="file-edit" style="color:var(--c-primary); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 4: 视觉 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-green-600); padding: 20px 15px;">
+            <div
+                style="background:var(--c-green-600); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                4</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">呈现页面<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Visuals)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    图文排版<br>
+                    ↓<br>
+                    <strong>最终 PPT 页面</strong><br>
+                    <span style="font-size:12px; color:var(--c-green-600);">(做设计)</span>
+                </p>
+            </div>
+            <i data-lucide="monitor-play" style="color:var(--c-green-600); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+    </div>
+
+    <!-- 底部 Hook -->
+    <div style="margin-top: 30px; text-align: center; color: var(--c-text-3); font-size: 14px;">
+        👇 接下来的内容，我们将按照这个流程一步步拆解
+    </div>
+</div>
+
+<!-- Slide 10: Step 1 & 2 骨架构建 -->
+<div class="slide">
+    <div class="header">
+        <h1>03. 骨架构建：从大纲到观点</h1>
+        <div class="header-sub">Step 1 & 2: Structure & Modules</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Step 1 生成全局大纲 -->
+        <div class="core-col">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-purple);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-purple); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        1</div>
+                    <h3 style="margin:0; color:var(--c-text);">生成全局大纲 (Skeleton)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">解决痛点：</strong>"只有一个标题，不知从何下手"<br>
+                    <strong style="color:var(--c-text);">核心任务：</strong>确定页数、逻辑流、每页标题
+                </div>
+
+                <div class="prompt-box" style="font-size:12px; padding:15px; line-height: 1.5;">
+                    <div style="color: var(--c-purple); font-style: italic; margin-bottom: 8px;">{描述你的思路、想讲的内容、逻辑等}
+                    </div>
+                    <div>你是一位资深的幻灯片设计大师，现在需要完成一份ppt的大纲，要求：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1）主题：<strong style="color: #cbd5e1;">{{不限字数，越长越好}}</strong><br>
+                        2）受众：<strong style="color: #cbd5e1;">{{画像/人数/特征等}}</strong><br>
+                        3）时长：<strong style="color: #cbd5e1;">{{30分钟 or 12小时}}</strong><br>
+                        4）目的：<strong style="color: #cbd5e1;">{{汇报/培训/分享/评审}}</strong><br>
+                        5）结构：<strong style="color: #cbd5e1;">{{例:6章节,每章5要点}}</strong><br>
+                        6）页数：<strong style="color: #cbd5e1;">{{例:总页数 100 页}}</strong><br>
+                        7）要点：<strong style="color: #cbd5e1;">{{例:原理/案例/互动}}</strong><br>
+                        8）其他：<strong style="color: #cbd5e1;">{{例:模块头尾综述/总结}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-purple); color:white; opacity:0.8;">
+                    关键：限定页数与逻辑模型</div>
+            </div>
+        </div>
+
+        <!-- Right: Step 2 细化章节观点 -->
+        <div class="secondary-panel">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-blue-400);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-blue-400); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        2</div>
+                    <h3 style="margin:0; color:var(--c-text);">细化模块观点 (Key Points)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">解决痛点：</strong>"标题有了，但这页具体讲什么？"<br>
+                    <strong style="color:var(--c-text);">核心任务：</strong>提炼论据、数据、案例
+                </div>
+
+                <div class="prompt-box"
+                    style="font-size:12px; padding:15px; border-left-color: var(--c-blue-400); line-height: 1.5;">
+                    <div style="color: var(--c-blue-400); font-style: italic; margin-bottom: 8px;">{已有大纲，针对某一具体章节深化}
+                    </div>
+                    <div>你是一个逻辑严密的商业分析师。针对大纲中的<strong style="color: #cbd5e1;">{{第三章：市场痛点}}</strong>，请梳理详细逻辑：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1) 核心观点：<strong style="color: #cbd5e1;">{{一句话概括本章结论}}</strong><br>
+                        2) 叙事结构：<strong style="color: #cbd5e1;">{{SCQA / 黄金圈 / 现象-原因-对策}}</strong><br>
+                        3) 支撑论据：<strong style="color: #cbd5e1;">{{列出3-5个关键数据或案例}}</strong><br>
+                        4) 呈现建议：<strong style="color: #cbd5e1;">{{图表? 对比图? 故事?}}</strong><br>
+                        5) 过场衔接：<strong style="color: #cbd5e1;">{{如何自然过渡到下一章}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-blue-400); color:white; opacity:0.8;">
+                    关键：不仅要“什么”，更要“怎么讲”</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Step 3 & 4 内容填充与视觉 -->
+<div class="slide">
+    <div class="header">
+        <h1>04. 血肉填充：从逐字稿到视觉</h1>
+        <div class="header-sub">Step 3 & 4: Content & Visuals</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Step 3 生成页面内容 -->
+        <div class="core-col">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-primary);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-primary); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        3</div>
+                    <h3 style="margin:0; color:var(--c-text);">生成页面内容 (Content)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">核心任务：</strong>复用文本写作技巧，将观点转化为讲稿<br>
+                    <strong style="color:var(--c-text);">Callback：</strong>Recall <span
+                        style="background:var(--c-surface-2); padding:2px 6px; border-radius:4px; font-weight:bold;">Ch.2
+                        润色/改写</span> 方法论
+                </div>
+
+                <div class="prompt-box"
+                    style="font-size:12px; padding:15px; border-left-color: var(--c-primary); line-height: 1.5;">
+                    <div style="color: var(--c-primary); font-style: italic; margin-bottom: 8px;">{已有大纲，规划单页PPT的布局与内容}
+                    </div>
+                    <div>你是一位 PPT 内容策划师。针对大纲中<strong style="color: #cbd5e1;">{{这一页的主题}}</strong>，请帮我规划：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1) 核心逻辑：<strong style="color: #cbd5e1;">{{这一页想解决什么问题/传达什么结论}}</strong><br>
+                        2) 推荐版式：<strong style="color: #cbd5e1;">{{左右对比 / 三点排比 / 流程图 / 大图背景}}</strong><br>
+                        3) 模块内容：<strong style="color: #cbd5e1;">{{根据版式，撰写每个区域的标题+正文}}</strong><br>
+                        4) 金句提炼：<strong style="color: #cbd5e1;">{{一句能作为本页 Slogan 的话}}</strong><br>
+                        5) 视觉建议：<strong style="color: #cbd5e1;">{{配图需要体现什么意象}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-primary); color:white; opacity:0.8;">
+                    关键：用写作技巧 (Ch.2) 赋能 PPT 表达</div>
+            </div>
+        </div>
+
+        <!-- Right: Step 4 呈现页面 -->
+        <div class="secondary-panel">
+            <div class="card"
+                style="height: 100%; border-top: 4px solid var(--c-green-600); display: flex; flex-direction: column;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-green-600); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        4</div>
+                    <h3 style="margin:0; color:var(--c-text);">呈现页面 (Visuals)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:20px;">
+                    <strong style="color:var(--c-text);">核心任务：</strong>将梳理好的布局与文案落地为最终画面<br>
+                    <strong style="color:var(--c-text);">两条路径：</strong>根据能力栈选择
+                </div>
+
+                <!-- Path A: AI 代码生成 -->
+                <div
+                    style="background: var(--c-surface-2); padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--c-border);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <strong style="color: var(--c-text);">🅰️ AI 代码生成流 (Pro)</strong>
+                        <span class="tag"
+                            style="background:var(--c-green-600); color:white; font-size:10px; padding:2px 6px;">推荐</span>
+                    </div>
+                    <div style="font-size:12px; color:var(--c-text-2); line-height:1.5; margin-bottom:8px;">
+                        使用 Cursor/V0 等 AI 编辑器，直接生成网页版 PPT。
+                    </div>
+                    <div
+                        style="display:flex; align-items:center; gap:8px; background:white; padding:8px; border-radius:6px; border:1px dashed var(--c-border);">
+                        <i data-lucide="file-code" style="width:16px; color:var(--c-primary);"></i>
+                        <span
+                            style="font-size:12px; font-family:monospace; color:var(--c-text);">HTML-PPT风格设计规范.md</span>
+                    </div>
+                    <div style="font-size:10px; color:var(--c-text-3); margin-top:4px;">*以此文件作为 System Prompt</div>
+                </div>
+
+                <!-- Path B: 手动排版 -->
+                <div
+                    style="background: var(--c-surface-2); padding: 15px; border-radius: 8px; flex: 1; border: 1px solid var(--c-border);">
+                    <div style="margin-bottom:8px;">
+                        <strong style="color: var(--c-text);">🅱️ 手动排版流 (Classic)</strong>
+                    </div>
+                    <div style="font-size:12px; color:var(--c-text-2); line-height:1.5;">
+                        使用 PowerPoint / Keynote。<br>
+                        依据 Step 3 生成的<strong>"布局建议"</strong>，进行人工排版。<br>
+                        <span style="color:var(--c-text-3);">优势：自由度高，无需代码基础。</span>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 15px; font-size: 12px; color: var(--c-text-3); display: flex; align-items: center; gap: 5px;">
+                    👇 下一页：单点突破工具 (Napkin.ai)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: 图表与框架的智能生成 -->
+<div class="slide">
+    <div class="header">
+        <h1>05. 视觉突破：Napkin.ai 智能绘图</h1>
+        <div class="header-sub">Text to Visuals in Seconds</div>
+    </div>
+
+    <!-- Top Banner: 核心定位 -->
+    <div
+        style="background: var(--c-surface-1); border-radius: 12px; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border: 1px solid var(--c-border);">
+        <div>
+            <h2 style="margin: 0 0 5px 0; color: var(--c-text); font-size: 20px;">🎨 Napkin.ai - 字成图的效率美学</h2>
+            <div style="color: var(--c-text-2); font-size: 14px;">不只是工具，更是将<strong style="color:var(--c-primary);">"文字 →
+                    可视化"</strong>过程自动化的创意伙伴。</div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">手绘风</span>
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">极简</span>
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">全场景</span>
+        </div>
+    </div>
+
+    <!-- Split Bottom: Features & Demo -->
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; height: 320px; align-items: center;">
+
+        <!-- Left: Core Features (Cards) - Refined & Compact -->
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- Card 1: 自动化 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-primary);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="sparkles" style="color: var(--c-primary); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">过程自动化
+                        (Effortless)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        无需调整节点，打字即出图。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: 设计感 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-purple);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="palette" style="color: var(--c-purple); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">审美在线
+                        (Aesthetic)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        独特手绘风格，极具设计感。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: 实用性 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-green-600);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="layers" style="color: var(--c-green-600); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">全场景适配
+                        (Versatile)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        像 flomo 一样极简，专注提效。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Demo Area -->
+        <div class="secondary-panel"
+            style="background: transparent; padding: 0; border: none; display: flex; flex-direction: column; gap: 10px;">
+            <!-- Input -->
+            <div class="card"
+                style="background: #f8fafc; border: 1px dashed var(--c-border); font-size: 12px; color: var(--c-text-2); line-height: 1.6; padding: 12px; margin: 0;">
+                1. 速度快：处理时间缩短 50%<br>
+                2. 成本低：部署成本降低 30%<br>
+                3. 易扩展：支持插件化开发
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; color: var(--c-primary);">
+                <i data-lucide="arrow-down" style="width: 18px;"></i>
+            </div>
+
+            <!-- Output Image -->
+            <div class="img-content"
+                style="flex: 1; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center;">
+                <img src="../image/Napkin.png" alt="Napkin.ai Interface"
+                    style="width: 100%; height: auto; max-height: 100%; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Slide 13: 人工与 AI 的合理分工 -->
+<div class="slide">
+    <div class="header">
+        <h1>06. 人工与 AI 的合理分工</h1>
+        <div class="header-sub">Human-AI Collaboration</div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 28px; color: var(--c-text);">AI 负责<span class="highlight"
+                style="color: var(--c-primary);">「结构与内容」</span> · 人工负责<span class="highlight"
+                style="color: var(--c-red);">「判断与美化」</span></h2>
+    </div>
+
+    <div style="display: flex; gap: 40px; justify-content: center; align-items: stretch;">
+        <!-- AI Zone -->
+        <div class="card" style="width: 400px; border-top: 4px solid var(--c-primary);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--c-primary);">
+                <i data-lucide="bot" style="width: 28px; height: 28px;"></i>
+                <h3 style="margin: 0;">AI (Copilot)</h3>
+            </div>
+            <ul style="line-height: 2; color: var(--c-text-2); font-size: 16px;">
+                <li><strong>快速生成草稿：</strong>打破空白页恐惧</li>
+                <li><strong>提供逻辑框架：</strong>确保结构完整</li>
+                <li><strong>海量素材检索：</strong>寻找案例与数据</li>
+                <li><strong>自动化排版：</strong>统一视觉风格</li>
+            </ul>
+        </div>
+
+        <!-- Human Zone -->
+        <div class="card" style="width: 400px; border-top: 4px solid var(--c-red);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--c-red);">
+                <i data-lucide="user" style="width: 28px; height: 28px;"></i>
+                <h3 style="margin: 0;">Human (Pilot)</h3>
+            </div>
+            <ul style="line-height: 2; color: var(--c-text-2); font-size: 16px;">
+                <li><strong>定义核心目标：</strong>PPT 讲给谁听？</li>
+                <li><strong>把控情感连接：</strong>故事是否动人？</li>
+                <li><strong>审核事实准确：</strong>数据是否真实？</li>
+                <li><strong>最终决策权：</strong>采用哪个方案？</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tag"
+        style="margin: 40px auto 0; width: fit-content; background: var(--c-surface-2); color: var(--c-text-2);">
+        💡 核心原则：让 AI 做它擅长的（发散/执行），人做人擅长的（决策/共情）
+    </div>
+</div>

@@ -1,0 +1,10 @@
+# Cloudflare Pages Configuration Hint
+# 
+# 在 Cloudflare Pages 控制台配置时使用以下设置:
+#
+# Build command:           python3 tools/build.py
+# Build output directory:  dist
+# Root directory:          /
+# Environment variables:   (无需配置)
+#
+# 注意: Cloudflare Pages 默认支持 Python 3.x

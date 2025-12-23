@@ -1,0 +1,666 @@
+<!-- Slide 5: Chapter 2 Title -->
+<div class="slide"
+    style="justify-content:center; align-items:center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第二章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">文档 + 文案：高频办公场景的直接提效</h2>
+</div>
+
+<!-- Slide 6: Core Values -->
+<div class="slide">
+    <div class="docs-role-layout">
+        <!-- Left Title -->
+        <div class="docs-role-left">
+            <div class="docs-role-title-en">Core Roles<br>of AI in Writing</div>
+            <div class="docs-role-title-cn">AI 文档写作的<br>三重角色</div>
+        </div>
+
+        <!-- Right 3-Cards -->
+        <div class="docs-role-grid">
+            <div class="role-card">
+                <div class="role-card-icon">🎤</div>
+                <div class="role-card-title">采访者</div>
+                <div class="role-card-desc">通过提问把你散乱的想法"问"出来，挖掘真实经历。</div>
+                <div class="role-core-tag">适用：复盘 / 总结</div>
+            </div>
+
+            <div class="role-card">
+                <div class="role-card-icon">🔧</div>
+                <div class="role-card-title">工具人</div>
+                <div class="role-card-desc">处理扩写、润色、格式化等体力活，让你专注思考。</div>
+                <div class="role-core-tag">适用：报告 / 文档</div>
+            </div>
+
+            <div class="role-card">
+                <div class="role-card-icon">🪞</div>
+                <div class="role-card-title">镜子</div>
+                <div class="role-card-desc">比你更客观的视角，发现逻辑漏洞和表达问题。</div>
+                <div class="role-core-tag">适用：文章打磨</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Quote -->
+    <div class="docs-role-footer">
+        <div class="footer-quote">
+            💎 核心原则：<span>人定灵魂，AI 做体力活</span>。你的观点、经历和判断才是内容的灵魂。
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Method 1 - Conversational -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            🎤 对话式创作
+            <span class="method-subtitle">让 AI 把你的想法"问"出来</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <!-- Left: Interactive Process Flow -->
+        <div class="interactive-container" id="process-flow-conversation">
+            <!-- Tabs -->
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchDocStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">设定框架</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">逐个回答</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">一键成文</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(3)">
+                    <div class="tab-badge">STEP 4</div>
+                    <div class="tab-name">人工润色</div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 设定采访框架</strong>
+
+                    我想写一篇关于【主题】的文章，但还没想清楚怎么写。
+
+                    请你扮演一个资深编辑，通过提问帮我梳理思路。规则如下：
+                    1. 一次只问一个问题
+                    2. 根据我的回答追问细节
+                    3. 问题要能挖掘我的真实经历和独特观点
+                    4. 大概问 8-10 个问题
+                    5. 问完后帮我整理成文章大纲
+
+                    现在开始第一个问题。</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 像聊天一样回答</strong>
+
+                    AI 会问类似这样的问题：
+                    • "你是从什么时候开始接触这个领域的？"
+                    • "遇到过最大的困难是什么？怎么解决的？"
+                    • "如果只能给新手一个建议，你会说什么？"
+
+                    (你只需讲清楚事实和观点，不用管结构)</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 一键成文</strong>
+
+                    根据我们的对话，请帮我：
+                    1. 整理成一篇文章的初稿
+                    2. 保留我的原话和表达风格
+                    3. 补充必要的过渡段落
+                    4. 标注哪些地方需要我补充细节</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工润色 (注入灵魂)</strong>
+
+                    • 调整段落顺序，让逻辑更顺
+                    • 加入更生动的开头和结尾
+                    • 补充 AI 问不出来的细节 (隐性知识)
+                    • 删掉 AI 套话，保留干货</div>
+            </div>
+        </div>
+
+        <script>
+            function switchDocStep(index) {
+                const container = document.getElementById('process-flow-conversation');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+
+                tabs.forEach((tab, i) => {
+                    if (i === index) tab.classList.add('active');
+                    else tab.classList.remove('active');
+                });
+
+                boxes.forEach((box, i) => {
+                    if (i === index) box.classList.add('active');
+                    else box.classList.remove('active');
+                });
+            }
+        </script>
+
+        <!-- Right: Insight -->
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 为什么有效？</div>
+                <div class="core-insight-text">
+                    你不用费劲去想，只需要<strong>回答问题</strong>。<br><br>
+                    文章的观点、经历和判断都 <strong>来自你自己</strong>，AI 只是帮你梳理。<br><br>
+                    这更接近<strong>"记者采访"</strong>而非 AI 代写。
+                </div>
+            </div>
+
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 年终总结、项目复盘<br>• 经验分享、踩坑记录<br>• 任何"有想法但写不出来"的时候</p>
+                </div>
+                <div class="info-card">
+                    <h4>💎 核心观念</h4>
+                    <p>署名永远属于提供内容的人，而不是拿着工具的人。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Slide 8: Method 2 - Outline -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            📋 大纲式创作
+            <span class="method-subtitle">你定骨架，AI 填肉</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <!-- Left: Interactive Process Flow -->
+        <div class="interactive-container" id="process-flow-outline">
+            <!-- Tabs -->
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchOutlineStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">写详细大纲</div>
+                </div>
+                <div class="step-tab" onclick="switchOutlineStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">AI 扩写</div>
+                </div>
+                <div class="step-tab" onclick="switchOutlineStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">人工修改</div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 写详细大纲</strong>
+
+                    ## 文章大纲：产品经理 2024 年终总结
+
+                    ### 一、年度概览
+                    - 核心成就：负责 [项目 A]，实现营收 [X] 万
+                    - 关键数据：DAU 增长 30%，用户满意度提升 10%
+
+                    ### 二、重点项目复盘 (STAR 模型)
+                    - 背景 (S)：竞品推出新功能，导致我方用户流失
+                    - 任务 (T)：3个月内挽回流失用户，稳定大盘
+                    - 动作 (A)：
+                    1. 用户调研，定位核心痛点
+                    2. 快速迭代版本，优化 [核心功能]
+                    3. 联合运营部开展 [活动名称]
+                    - 结果 (R)：流失率下降 5%，回流用户 [X] 人
+
+                    ### 三、 个人成长与不足
+                    - 成长：数据分析能力、跨部门协作能力
+                    - 不足：项目排期预估不够准确
+
+                    ### 四、2025 规划
+                    - 目标：探索 AI 在业务中的落地场景</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 让 AI 扩写</strong>
+
+                    请根据以下大纲扩写文章：
+
+                    [粘贴大纲]
+
+                    要求：
+                    1. 严格按照大纲结构
+                    2. 每个观点都要有具体论证
+                    3. 语气：专业但不学究，像在和朋友聊天
+                    4. 总字数：2000字左右</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工修改</strong>
+
+                    AI 扩写的内容通常「正确但平淡」，你需要：
+                    • 把开头改得更抓人
+                    • 加入自己的真实案例
+                    • 删掉 AI 的套话（「总之」「综上所述」）
+                    • 调整语气，让它更像「你」</div>
+            </div>
+        </div>
+
+        <script>
+            function switchOutlineStep(index) {
+                const container = document.getElementById('process-flow-outline');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <!-- Right: Insight -->
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 核心逻辑</div>
+                <div class="core-insight-text">
+                    关键在于：<strong>大纲要足够详细，观点要足够明确。</strong><br><br>
+                    当大纲足够细的时候，AI 扩写出来的东西，<strong>90% 都堪用。</strong>
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 观点文、评论文<br>• 教程、指南类文章<br>• 任何你已经想清楚「要说什么」的文章</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Method 3 - Completion -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            ✍️ 补充式创作
+            <span class="method-subtitle">你写开头，AI 接着写</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-completion">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchCompletionStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">写段落开头</div>
+                </div>
+                <div class="step-tab" onclick="switchCompletionStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">AI 补充</div>
+                </div>
+                <div class="step-tab" onclick="switchCompletionStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">替换润色</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 我的文章草稿（请补充完整）</strong>
+
+                    去年我做了一个决定，这可能是我职业生涯最重要的转折点。
+                    [请补充：描述这个决定是什么，当时的背景]
+
+                    做这个决定的时候，其实我很犹豫。
+                    [请补充：犹豫的原因，内心的挣扎]
+
+                    但最终推动我行动的，是一件小事。
+                    [请补充：一个具体的触发事件]
+
+                    现在一年过去了，我想分享三个最大的收获。
+                    [请补充：三个收获，每个100字左右]</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: AI 补充</strong>
+
+                    请根据我的草稿，补充 [请补充] 标注的部分。
+
+                    要求：
+                    1. 保持我的叙述风格
+                    2. 内容要具体，不要空泛
+                    3. 补充的内容要和我的开头自然衔接</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 替换和润色</strong>
+
+                    AI 补充的内容是「通用」的，你需要：
+                    • 把通用案例替换成你的真实经历
+                    • 把抽象描述改成具体细节
+                    • 确保前后文衔接自然</div>
+            </div>
+        </div>
+
+        <script>
+            function switchCompletionStep(index) {
+                const container = document.getElementById('process-flow-completion');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 掌控力</div>
+                <div class="core-insight-text">
+                    你写每个段落的开头一两句，把起承转合做好，AI 负责补充完整。<br><br>
+                    <strong>文章的节奏和走向完全由你控制。</strong>
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 叙事类文章、故事分享<br>• 有思路但懒得写完整<br>• 需要快速产出初稿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Method 4 - Inspiration -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            💡 灵感激发
+            <span class="method-subtitle">让 AI 帮你打开思路</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-inspiration">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchInspirationStep(0)">
+                    <div class="tab-badge">SCENARIO 1</div>
+                    <div class="tab-name">选题迷茫</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(1)">
+                    <div class="tab-badge">SCENARIO 2</div>
+                    <div class="tab-name">观点枯竭</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(2)">
+                    <div class="tab-badge">SCENARIO 3</div>
+                    <div class="tab-name">结构卡壳</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(3)">
+                    <div class="tab-badge">KEY</div>
+                    <div class="tab-name">筛选组合</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 选题迷茫</strong>
+
+                    我想写关于【领域】的内容，目标读者是【人群】。
+
+                    请帮我：
+                    1. 列出 10 个可能的选题角度
+                    2. 每个角度说明：为什么读者会感兴趣、有什么独特价值
+                    3. 标注哪些是常见角度，哪些是新颖角度</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 观点枯竭</strong>
+
+                    我要写一篇关于【主题】的文章，但感觉没什么新鲜观点可说。
+
+                    请帮我：
+                    1. 列出关于这个主题的 5 个常见观点
+                    2. 针对每个常见观点，提供一个「反常识」的角度
+                    3. 给出 3 个可能被忽视的切入点</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 结构卡壳</strong>
+
+                    我想表达的核心观点是：[你的观点]
+
+                    请帮我想 5 种不同的文章结构来呈现这个观点：
+                    1. 每种结构的逻辑主线
+                    2. 各自的优缺点
+                    3. 适合什么样的读者</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 筛选和组合</strong>
+
+                    AI 给的建议通常有好有坏。你的工作是：
+                    • 筛选出有价值的角度
+                    • 组合成你自己的思路
+                    • 加入你独特的理解
+
+                    AI 是头脑风暴的伙伴，不是决策者。</div>
+            </div>
+        </div>
+
+        <script>
+            function switchInspirationStep(index) {
+                const container = document.getElementById('process-flow-inspiration');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 核心逻辑</div>
+                <div class="core-insight-text">
+                    <strong>问题不在"没有灵感"，而在"灵感太散"。</strong><br><br>
+                    选题决定了文章的流量潜力。写作前花时间<strong>「压缩灵感、收敛选题」</strong>，往往比纠结文笔本身更关键。<br><br>
+                    (AI 是帮你打开思路的工具，但收敛决策的必须是你)
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 选题阶段不知道写什么<br>• 写到一半卡住<br>• 文章平淡想找新角度</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Method 5 - Refinement -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            🔧 改写优化
+            <span class="method-subtitle">你写初稿，AI 帮你升级</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-refinement">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchRefinementStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">AI 毒舌诊断</div>
+                </div>
+                <div class="step-tab" onclick="switchRefinementStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">针对性优化</div>
+                </div>
+                <div class="step-tab" onclick="switchRefinementStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">人工取舍</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 毒舌主编诊断</strong>
+
+                    这是我写的初稿：
+
+                    [粘贴初稿]
+
+                    可以压缩成一段短指令，用来当通用提示词：
+
+                    ---
+
+                    从现在起，你是一个冷静刻薄的「内容主编」，禁止恭维和客套，不用迎合我的观点，要站在比我更外部的视角审稿。 请你专门按照这 8 点挑毛病：
+                    1）有没有「活人」的思考过程；  
+                    2）故事节奏有没有起伏；  
+                    3）有没有让读者共鸣的真实痛点；  
+                    4）是否始终围绕「AI 创业者/AI 产品人」这个人设；  
+                    5）读者有没有明确的信息增益；  
+                    6）案例是否足够好玩，有记忆点；  
+                    7）目标受众是谁，范围是否合适；  
+                    8）语气是否像在跟读者对话、能激发评论。  
+                    每一点都请给出具体问题和修改建议，而不是泛泛而谈。
+                </div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 针对性优化</strong>
+
+                    根据诊断结果，让 AI 帮你优化特定部分：
+
+                    请帮我改写文章的开头，要求：
+                    - 更抓人眼球
+                    - 快速切入主题
+                    - 保留我的核心信息
+
+                    原开头：[粘贴]</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工取舍</strong>
+
+                    AI 的修改建议不一定都对。你需要判断：
+                    • 哪些修改让文章更好了
+                    • 哪些修改丢失了你的风格
+                    • 最终版本要像「你」写的</div>
+            </div>
+        </div>
+
+        <script>
+            function switchRefinementStep(index) {
+                const container = document.getElementById('process-flow-refinement');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 优化逻辑</div>
+                <div class="core-insight-text">
+                    <strong>不是让 AI 重写，而是让 AI 在你的基础上优化。</strong><br><br>
+                    初稿不用追求完美，哪怕是流水账也行，先把想说的写出来。
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 重要文章反复打磨<br>• 感觉写得不好但不知问题在哪<br>• 想通过 AI 反馈提升水平</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Method 6 - Material Integration -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            📚 素材整合
+            <span class="method-subtitle">喂资料，出初稿</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-material">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchMaterialStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">收集素材</div>
+                </div>
+                <div class="step-tab" onclick="switchMaterialStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">喂给 AI</div>
+                </div>
+                <div class="step-tab" onclick="switchMaterialStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">大幅加工</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Action: 收集素材</strong>
+
+                    • 相关文章、行业报告
+                    • 你的笔记、想法碎片
+                    • 核心数据、案例资料
+
+                    推荐工具：秘塔搜索、腾讯ima...</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 喂给 AI</strong>
+
+                    我要写一篇关于【主题】的文章。
+
+                    以下是我收集的素材：
+                    [粘贴素材]
+
+                    请根据这些素材：
+                    1. 提炼出 3-5 个核心观点
+                    2. 组织成一篇逻辑清晰的文章
+                    3. 标注哪些是素材中的内容，哪些是你补充的</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 大幅加工 (关键)</strong>
+
+                    ⚠️ 这种方法生成的初稿「AI 味」最重，必须大幅修改：
+
+                    • 加入你的观点和判断
+                    • 用你的语言重新表达
+                    • 补充你的案例和经历
+                    • 删掉所有套话</div>
+            </div>
+        </div>
+
+        <script>
+            function switchMaterialStep(index) {
+                const container = document.getElementById('process-flow-material');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card" style="border-left-color: #ef4444;">
+                <div class="core-insight-title" style="color: #ef4444;">⚠️ 慎用提醒</div>
+                <div class="core-insight-text">
+                    这是人工投入最少的方法，但也最容易写出<strong>「AI 味」</strong>。<br><br>
+                    <strong>必须注入你的观点和判断</strong>，否则文章没有灵魂。
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 资料整理、信息汇总<br>• 有大量素材需快速成文<br>• 不适合原创观点文章</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

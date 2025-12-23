@@ -1,0 +1,405 @@
+<!-- Slide 10: Chapter 4 Title -->
+<div class="slide section-cover" data-chapter="4.0">
+    <div class="section-cover-content">
+        <div class="chapter-number">04</div>
+        <div class="chapter-title">数据分析</div>
+        <div class="chapter-subtitle">减少重复劳动,提升洞察</div>
+        <div class="decoration-line"></div>
+    </div>
+</div>
+
+<!-- Slide 11: 完整流程 -->
+<div class="slide" data-chapter="4.1">
+    <div class="header">
+        <h1>AI 数据分析的完整流程</h1>
+        <div class="header-sub">Data Analysis Workflow</div>
+    </div>
+
+    <!-- Zone 1: The 4 Core Steps -->
+    <div class="workflow-steps">
+        <div class="w-step">
+            <div class="ws-number">01</div>
+            <div class="ws-content">
+                <div class="ws-title">收集与整合</div>
+                <div class="ws-desc">多源异构数据统一</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">02</div>
+            <div class="ws-content">
+                <div class="ws-title">预处理与清洗</div>
+                <div class="ws-desc">结构化与去噪</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">03</div>
+            <div class="ws-content">
+                <div class="ws-title">分析与挖掘</div>
+                <div class="ws-desc">指标计算与洞察</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">04</div>
+            <div class="ws-content">
+                <div class="ws-title">可视化与呈现</div>
+                <div class="ws-desc">决策报告生成</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zone 2: Case Study Visualization (Filling the void) -->
+    <div class="case-study-container">
+        <div class="cs-label">实战演示流:武汉客户招标数据分析</div>
+        <div class="cs-flow">
+            <!-- Step 1 Vis -->
+            <div class="cs-item">
+                <div class="cs-icon-group">
+                    <div class="file-icon xls">XLS</div>
+                    <div class="file-icon doc">DOC</div>
+                    <div class="file-icon pdf">PDF</div>
+                </div>
+                <div class="cs-text">原始文件堆</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 2 Vis -->
+            <div class="cs-item">
+                <div class="code-snippet-mini">
+                    <span class="c-gray">{</span><br>
+                    &nbsp;&nbsp;<span class="c-key">"client"</span>: <span class="c-val">"ABC Corp"</span>,<br>
+                    &nbsp;&nbsp;<span class="c-key">"amount"</span>: <span class="c-num">500k</span><br>
+                    <span class="c-gray">}</span>
+                </div>
+                <div class="cs-text">标准 JSON/CSV</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 3 Vis -->
+            <div class="cs-item center-highlight">
+                <div class="ai-bubble">
+                    <div class="ai-icon">✨</div>
+                    <div class="ai-text">"发现 ABC 公司招标周期有规律..."</div>
+                </div>
+                <div class="cs-text">智能洞察</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 4 Vis -->
+            <div class="cs-item">
+                <div class="report-mini">
+                    <div class="r-line r-h1"></div>
+                    <div class="r-chart"></div>
+                    <div class="r-line"></div>
+                    <div class="r-line"></div>
+                </div>
+                <div class="cs-text">Markdown 决策报告</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zone 3: Efficiency Comparison Table -->
+    <div class="efficiency-box">
+        <div class="eff-col old">
+            <div class="eff-header">🚧 传统方式</div>
+            <ul class="eff-list">
+                <li>人工打开每个 Excel 复制粘贴</li>
+                <li>手写 VLOOKUP / Pivot Table</li>
+                <li>肉眼观察数据找规律</li>
+                <li><strong>耗时:4 小时+</strong></li>
+            </ul>
+        </div>
+        <div class="eff-vs">
+            <div class="vs-circle">VS</div>
+        </div>
+        <div class="eff-col new">
+            <div class="eff-header">🚀 AI 赋能</div>
+            <ul class="eff-list">
+                <li>工具一键合并/转换</li>
+                <li>自然语言提问分析</li>
+                <li>自动生成完整报告</li>
+                <li><strong>耗时:15 分钟</strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: 数据源处理 -->
+<div class="slide" data-chapter="4.2">
+    <div class="header">
+        <h1>数据收集与清洗:AI 的前置动作</h1>
+        <div class="header-sub">Data Pre-processing</div>
+    </div>
+
+    <div class="grid-2-1">
+        <!-- Left: Workflow -->
+        <div class="content-panel left-panel">
+            <div class="panel-title">不同数据源的处理路径</div>
+            <div class="flow-vertical">
+                <div class="flow-row">
+                    <div class="flow-node source-node">📝 Word / PDF</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">直接投喂 AI</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node result-node">结构化提取</div>
+                </div>
+                <div class="divider-dashed"></div>
+                <div class="flow-row">
+                    <div class="flow-node source-node">📊 单个 Excel</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">转文本工具</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node result-node">CSV / Markdown</div>
+                </div>
+                <div class="divider-dashed"></div>
+                <div class="flow-row">
+                    <div class="flow-node source-node">📚 多个 Excel</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node human-action">人工合并单表</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">转文本清洗</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Tips -->
+        <div class="content-panel right-panel">
+            <div class="panel-title">✅ 自查清单 (Checklist)</div>
+            <div class="checklist-grid">
+                <div class="check-item">
+                    <span class="check-icon">📝</span>
+                    <span class="check-text">转为纯文本 (CSV)</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🔗</span>
+                    <span class="check-text">合并为单表</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🧹</span>
+                    <span class="check-text">删除冗余列</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">📏</span>
+                    <span class="check-text">统一金额单位</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🏷️</span>
+                    <span class="check-text">标记异常值</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🗂️</span>
+                    <span class="check-text">标准化枚举值</span>
+                </div>
+                <div class="check-item full-width">
+                    <span class="check-icon">ℹ️</span>
+                    <span class="check-text">说明数据规模与抽样方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: 协作分析与自动化 -->
+<div class="slide" data-chapter="4.3">
+    <div class="header">
+        <h1>协作分析:让 AI 懂你的业务</h1>
+        <div class="header-sub">Collaborative Analysis & Automation</div>
+    </div>
+
+    <div class="analysis-layout">
+        <!-- 左侧:自动化流程 -->
+        <div class="analysis-sidebar">
+            <div class="method-card">
+                <div class="card-icon">⚡️</div>
+                <h3>自动化工作流</h3>
+                <!-- 微型流程图 -->
+                <div class="mini-flow">
+                    <div class="mf-step">
+                        <div class="mf-icon">🤖</div>
+                        <div class="mf-text">Trae/AI</div>
+                    </div>
+                    <div class="mf-arrow">↓</div>
+                    <div class="mf-step">
+                        <div class="mf-icon">📝</div>
+                        <div class="mf-text">Markdown</div>
+                    </div>
+                    <div class="mf-arrow">↓</div>
+                    <div class="mf-step">
+                        <div class="mf-icon">📊</div>
+                        <div class="mf-text">可视化报告</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-card">
+                <div class="card-header">💡 核心技巧</div>
+                <div class="tips-content">
+                    <div class="tip-point">
+                        <strong>分阶段</strong>:不要一次性给太长指令,让 AI 先建立认知。
+                    </div>
+                    <div class="tip-point">
+                        <strong>定格式</strong>:强制要求输出 Markdown,便于直接复制转换。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧:提示词模板 (上下两栏布局) -->
+        <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; overflow: hidden;">
+
+            <!-- 第一步卡片 -->
+            <div class="prompt-main" style="flex: 1; min-height: 0;">
+                <div class="prompt-toolbar">
+                    <span class="toolbar-title">📋 第一步:提取数据指标</span>
+                    <span class="toolbar-action" data-target="promptStep1">COPY</span>
+                </div>
+                <div class="prompt-editor large-text" id="promptStep1">## 角色
+                    你是一名**业务数据与文本分析的指标抽象助手**，擅长从原始业务数据中，**提炼“可分析的业务指标或纬度报告”**，用于后续业务分析、洞察与决策支持。
+
+                    ## 你的目标
+                    从我提供的内容中，**自动提炼出“可以被分析的指标体系”**，帮助业务人员理解：
+                    - 这份内容“可以从哪些角度分析”
+                    - 每个角度下“可以算什么指标、怎么大致算”
+
+                    ## 重要限制
+                    - 不要给出任何分析结论
+                    - 不要评价好坏、趋势、原因、建议
+                    - 只输出【可分析的指标与分析维度】
+
+                    ## 内容理解原则
+                    1. 自动判断输入内容的形态：
+                    - 结构化数据（如表格、字段、数值）
+                    - 非结构化文本（如报告、公告、描述性文字）
+                    - 或两者混合
+                    2. 自动识别其中的：
+                    - 对象类信息（如客户、员工、项目、产品、机构等）
+                    - 时间类信息
+                    - 数值/规模类信息（金额、数量、频次、周期等）
+                    - 分类/属性类信息（行业、地区、类型、状态等）
+                    3. 不预设行业、不预设业务类型，仅基于输入内容本身抽象分析可能性。
+
+                    ## 输出要求（全部使用 Markdown）
+
+                    ### 可分析的核心维度列表
+                    先输出一个列表，说明**基于当前内容，可以从哪些分析维度入手**。
+                    示例（仅示意，需根据实际内容生成）：
+                    - 对象价值维度
+                    - 时间节奏与周期维度
+                    - 规模与结构分布维度
+                    - 行为频次与活跃度维度
+                    - 对比与分层维度
+
+                    ### 各分析维度下的指标清单
+                    针对每一个分析维度，输出若干“可分析指标”，结构如下：
+
+                    #### 📌 分析维度：{自动命名}
+                    1. **指标名称**
+                    - **指标含义**：一句话说明这个指标在衡量什么
+                    - **主要依据内容**：来自哪些字段 / 文本信息 / 数据特征
+                    - **计算或抽象方式**：用自然语言说明大致怎么算或如何提取
+                    - **可对比/拆分的维度**：可以按哪些条件做分组、排序或对比
+
+                    2. **指标名称**
+                    - 同上结构
+
+                    > 说明：
+                    > - 若输入是文本，可将“指标”理解为【可量化 / 可对比 / 可统计的要素】
+                    > - 若字段含义不完全明确，可用“若该字段表示……则可用于……”的方式描述
+
+                    ## 通用约束
+                    - 不新增输入中不存在的信息
+                    - 不预设业务目标、业务结论或业务动作
+                    - 只回答“**这份内容可以怎么被分析**”，不回答“分析后说明什么”
+
+                    ## 待分析内容
+                    {{在这里粘贴需要分析的 Excel 数据 / 报告正文 / 公告 / 任意业务内容}}</div>
+            </div>
+
+            <!-- 第二步卡片 -->
+            <div class="prompt-main" style="flex: 1; min-height: 0;">
+                <div class="prompt-toolbar">
+                    <span class="toolbar-title">📊 第二步:生成可视化报告</span>
+                    <span class="toolbar-action" data-target="promptStep2">COPY</span>
+                </div>
+                <div class="prompt-editor large-text" id="promptStep2">## 角色
+                    你是一名**专业的数据分析顾问**，擅长基于结构化数据字段进行分析解读与洞察提炼。
+
+                    ## 背景信息
+                    请基于一份关于 {分析对象说明，例如：某区域 / 某业务 / 某客户群} 的结构化数据进行分析。
+                    - 数据来源：{{Excel 文件或数据表名称}}
+                    - 分析对象：{{行粒度说明，例如：客户 / 项目 / 订单 / 用户 / 事件等描述}}
+                    - 字段说明（来自 Excel 表头）：
+                    - {{字段1名称}}：{{字段含义}}
+                    - {{字段2名称}}：{{字段含义}}
+                    - {{字段3名称}}：{{字段含义}}
+                    - {{……可继续补充}}
+                    - 当前分析时间：{{YYYY-MM-DD}}
+                    - 分析目的：{{本次数据分析希望回答的问题或支持的决策}}
+
+                    ## 输出要求
+                    请输出一份完整分析报告，以Markdown格式输出，包含：
+                    1. 数据概览与关键指标
+                    2. 多维度深度分析
+                    3. 趋势洞察与建议
+                    4. 可视化图表建议
+
+                    请输出一份完整分析报告，以Markdown格式输出，请开始输出。</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14 Removed (Merged into above) -->
+
+
+<!-- Slide 15 Removed -->
+
+<script>
+    // 通用复制功能
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyBtns = document.querySelectorAll('.toolbar-action');
+
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+
+                if (content) {
+                    // 获取纯文本内容
+                    const text = content.innerText;
+
+                    // 复制到剪贴板
+                    navigator.clipboard.writeText(text).then(() => {
+                        // 成功反馈
+                        const originalText = btn.textContent;
+                        btn.textContent = '✓ 已复制';
+                        btn.style.background = '#10b981';
+                        btn.style.color = 'white';
+
+                        // 2秒后恢复
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                            btn.style.color = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('复制失败:', err);
+                        btn.textContent = '✗ 失败';
+                        setTimeout(() => {
+                            btn.textContent = 'COPY';
+                        }, 2000);
+                    });
+                }
+            });
+        });
+    });
+</script>

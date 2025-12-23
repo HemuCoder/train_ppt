@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 赋能业务实战培训</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- ECharts for charts implies we might need it, but I'll use static HTML/CSS representations for now as per "HTML-PPT" simplistic approach unless complex charts are needed -->
+</head>
+<body>
+
+  <div class="slide-container">
+    
+    <!-- Navigation -->
+    <div class="nav-buttons">
+      <button class="nav-btn" id="btn-prev"><i data-lucide="chevron-left"></i></button>
+      <button class="nav-btn" id="btn-next"><i data-lucide="chevron-right"></i></button>
+    </div>
+
+    <!-- Slide 1: 封面 -->
+    <div class="slide cover-page active">
+      <div class="tag" style="margin-bottom: 20px; font-size: 14px;">AI 业务赋能系列课程</div>
+      <div class="cover-title">从大型语言模型底层逻辑<br>到业务实战</div>
+      <div class="cover-subtitle">全面掌握 AI 赋能办公、文档处理、PPT 生成、数据分析与提效工具</div>
+      <div class="cover-meta">
+        <i data-lucide="clock" style="width:16px; display:inline; vertical-align:middle"></i> 1小时深度培训 &nbsp;|&nbsp; 
+        <i data-lucide="users" style="width:16px; display:inline; vertical-align:middle"></i> 业务团队
+      </div>
+    </div>
+
+    <!-- Slide 2: 目录 -->
+    <div class="slide">
+      <div class="header">
+        <h1>课程大纲</h1>
+        <div class="header-sub">Course Outline</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <ul class="toc-list">
+            <li class="toc-item">
+              <span class="toc-num">01</span>
+              <span class="toc-text">原理：理解 AI / LLM，建立正确认知</span>
+            </li>
+            <li class="toc-item">
+              <span class="toc-num">02</span>
+              <span class="toc-text">文档 + 文案：高频办公场景的直接提效</span>
+            </li>
+            <li class="toc-item">
+              <span class="toc-num">03</span>
+              <span class="toc-text">PPT：从结构到表达的效率升级</span>
+            </li>
+            <li class="toc-item">
+              <span class="toc-num">04</span>
+              <span class="toc-text">数据处理：减少重复劳动，提升洞察</span>
+            </li>
+            <li class="toc-item">
+              <span class="toc-num">05</span>
+              <span class="toc-text">工具推荐：落地、组合与迁移</span>
+            </li>
+          </ul>
+        </div>
+        <div class="card" style="background: var(--c-surface-2); display:flex; align-items:center; justify-content:center; text-align:center;">
+          <div>
+            <h3 style="color:var(--c-primary); margin-bottom:10px;">核心目的</h3>
+            <p class="text-p">让业务同事理解 LLM 的底层逻辑</p>
+            <p class="text-p">将 AI 应用到真实工作场景</p>
+            <p class="text-p" style="font-weight:bold;">实现可量化的效率提升</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Chapter 1 Title -->
+    <div class="slide" style="justify-content:center; align-items:center; background: var(--g-primary); color:white;">
+      <h1 style="font-size: 60px; margin-bottom: 20px;">第一章</h1>
+      <h2 style="font-size: 32px; font-weight: 400;">原理：理解 AI / LLM，建立正确认知</h2>
+    </div>
+
+    <!-- Slide 4: Chapter 1 Content -->
+    <div class="slide">
+      <div class="header">
+        <h1>01. AI / LLM 核心原理</h1>
+        <div class="header-sub">Core Principles</div>
+      </div>
+      <div class="project-grid">
+        <div class="col-left">
+          <div class="card">
+            <div class="section-title">LLM 本质</div>
+            <p class="text-p">LLM (Large Language Model) 本质上是一个<b>"概率预测机"</b>。</p>
+            <div class="funnel-bar" style="background: var(--c-surface-2); color:var(--c-text); border:1px solid var(--c-border);">
+              <span>Input: "白日依山"</span>
+              <i data-lucide="arrow-right"></i>
+              <span style="color:var(--c-primary); font-weight:bold;">Output: "尽" (99%)</span>
+            </div>
+            <p class="text-sm" style="margin-top:10px;">它不"理解"世界，它只是在模仿人类语言的统计规律。</p>
+          </div>
+          <div class="card">
+             <div class="section-title">为什么提示词重要？</div>
+             <p class="text-p">提示词 (Prompt) 是引导模型进入特定概率空间的钥匙。</p>
+          </div>
+        </div>
+        <div class="col-right">
+             <div class="card">
+                <div class="section-title">AI 的能力边界</div>
+                <div class="grid-2">
+                    <div class="flow-node-box ai">
+                        <i data-lucide="check-circle" style="color:var(--c-green); margin-bottom:5px;"></i>
+                        <strong>擅长</strong>
+                        <span class="text-sm">总结、翻译、改写、创意发想、代码生成</span>
+                    </div>
+                    <div class="flow-node-box human">
+                        <i data-lucide="x-circle" style="color:var(--c-red); margin-bottom:5px;"></i>
+                        <strong>不擅长</strong>
+                        <span class="text-sm">事实查证、复杂逻辑推理、实时数据获取(无插件时)</span>
+                    </div>
+                </div>
+             </div>
+             <div class="card">
+                <div class="section-title">判断是否可用 AI 的标准</div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                   <div class="flow-node-box system" style="flex:1;">容错率高吗？</div>
+                   <i data-lucide="arrow-right" style="color:var(--c-text-3)"></i>
+                   <div class="flow-node-box system" style="flex:1;">有验证手段吗？</div>
+                   <i data-lucide="arrow-right" style="color:var(--c-text-3)"></i>
+                   <div class="flow-node-box system" style="flex:1;">重复性高吗？</div>
+                </div>
+             </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Chapter 2 Title -->
+    <div class="slide" style="justify-content:center; align-items:center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color:white;">
+      <h1 style="font-size: 60px; margin-bottom: 20px;">第二章</h1>
+      <h2 style="font-size: 32px; font-weight: 400;">文档 + 文案：高频办公场景的直接提效</h2>
+    </div>
+
+    <!-- Slide 6: Chapter 2 Content -->
+    <div class="slide">
+      <div class="header">
+        <h1>02. 文档与文案场景</h1>
+        <div class="header-sub">Docs & Copywriting</div>
+      </div>
+      <div class="grid-2">
+         <div class="card">
+            <div class="section-title">从 0 到 1 生成文档</div>
+            <div class="timeline-grid" style="grid-template-columns: 1fr; border:none; gap:10px;">
+                <div class="funnel-bar">
+                    <span>1. 明确目的与受众</span>
+                    <i data-lucide="chevron-right"></i>
+                </div>
+                <div class="funnel-bar" style="opacity:0.9">
+                    <span>2. AI 生成大纲框架</span>
+                    <i data-lucide="list"></i>
+                </div>
+                <div class="funnel-bar" style="opacity:0.8">
+                    <span>3. 填充核心论点</span>
+                    <i data-lucide="edit-3"></i>
+                </div>
+                <div class="funnel-bar" style="opacity:0.7">
+                    <span>4. AI 润色与扩写</span>
+                    <i data-lucide="wand-2"></i>
+                </div>
+            </div>
+         </div>
+         <div>
+             <div class="card">
+                <div class="section-title">文案优化技巧</div>
+                <p class="text-p"><strong>角色设定：</strong> "你是一位资深的市场专家..."</p>
+                <p class="text-p"><strong>风格指定：</strong> "使用简洁、有力的职场语言..."</p>
+                <p class="text-p"><strong>示例投喂：</strong> "参考以下范文的结构..."</p>
+             </div>
+             <div class="card" style="background: #fff1f2; border-color: #fecdd3;">
+                <div class="section-title" style="color:#e11d48">⚠️ 风险与边界</div>
+                <p class="text-sm" style="color:#9f1239">永远不要直接使用 AI 生成的数据和事实，必须进行人工核验 (Human in the loop)。敏感数据严禁上传。</p>
+             </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Chapter 3 Title -->
+    <div class="slide" style="justify-content:center; align-items:center; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color:white;">
+      <h1 style="font-size: 60px; margin-bottom: 20px;">第三章</h1>
+      <h2 style="font-size: 32px; font-weight: 400;">PPT：从结构到表达的效率升级</h2>
+    </div>
+
+    <!-- Slide 8: Chapter 3 Content -->
+    <div class="slide">
+      <div class="header">
+        <h1>03. PPT 智能生成</h1>
+        <div class="header-sub">Presentation Efficiency</div>
+      </div>
+      <div class="grid-3">
+         <div class="card">
+            <div class="section-title">痛点分析</div>
+            <ul style="color:var(--c-text-2); line-height:1.6;">
+                <li>内容梳理耗时 (40%)</li>
+                <li>排版美化耗时 (40%)</li>
+                <li>演讲逐字稿 (20%)</li>
+            </ul>
+         </div>
+         <div class="card" style="grid-column: span 2;">
+            <div class="section-title">AI 赋能流程</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                <div class="flow-node-box human">
+                    <span>核心观点</span>
+                </div>
+                <i data-lucide="arrow-right" style="color:var(--c-primary)"></i>
+                <div class="flow-node-box ai">
+                    <span>生成大纲 Markdown</span>
+                </div>
+                <i data-lucide="arrow-right" style="color:var(--c-primary)"></i>
+                <div class="flow-node-box ai">
+                    <span>润色正文内容</span>
+                </div>
+                <i data-lucide="arrow-right" style="color:var(--c-primary)"></i>
+                <div class="flow-node-box system">
+                    <span>导入工具生成 PPT</span>
+                </div>
+            </div>
+            <div style="margin-top:20px; padding:10px; background:var(--c-surface-2); border-radius:6px;">
+                <span class="tag">工具栈</span>
+                <span class="text-sm">ChatGPT / Claude (内容) + Gamma / MindShow (生成)</span>
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: Chapter 4 Title -->
+    <div class="slide" style="justify-content:center; align-items:center; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color:white;">
+      <h1 style="font-size: 60px; margin-bottom: 20px;">第四章</h1>
+      <h2 style="font-size: 32px; font-weight: 400;">数据分析：减少重复劳动</h2>
+    </div>
+
+    <!-- Slide 10: Chapter 4 Content -->
+    <div class="slide">
+      <div class="header">
+        <h1>04. 数据分析与洞察</h1>
+        <div class="header-sub">Data Analysis</div>
+      </div>
+      <div class="grid-2">
+          <div class="card">
+            <div class="section-title">Excel 助手</div>
+            <p class="text-p">不再需要死记硬背复杂公式。</p>
+            <div style="background:#1e293b; color:#a5b4fc; padding:10px; border-radius:4px; font-family:monospace; margin-bottom:10px;">
+                User: "帮我写一个公式，提取A列身份证号里的出生年月日"
+            </div>
+            <div style="background:#1e293b; color:#4ade80; padding:10px; border-radius:4px; font-family:monospace;">
+                AI: =TEXT(MID(A2,7,8),"0000-00-00")
+            </div>
+          </div>
+          <div class="card">
+            <div class="section-title">非结构化转结构化</div>
+            <p class="text-p">将会议纪要、大段文本转化为表格。</p>
+            <div class="grid-2">
+                <div class="flow-node-box human">杂乱文本</div>
+                <div class="flow-node-box ai" style="border-left-color:var(--c-primary);">标准 Json/CSV</div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Slide 11: Chapter 5 Title -->
+    <div class="slide" style="justify-content:center; align-items:center; background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); color:white;">
+      <h1 style="font-size: 60px; margin-bottom: 20px;">第五章</h1>
+      <h2 style="font-size: 32px; font-weight: 400;">工具推荐与落地</h2>
+    </div>
+
+    <!-- Slide 12: Tool Recommendations -->
+    <div class="slide">
+      <div class="header">
+        <h1>05. 工具生态</h1>
+        <div class="header-sub">Toolbox</div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+            <div class="section-title">对话/写作</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>ChatGPT (OpenAI)</strong>: 综合最强</li>
+                <li><strong>Claude 3 (Anthropic)</strong>: 写作自然，长文本强</li>
+                <li><strong>Kimi / 豆包</strong>: 国内访问友好</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title">PPT/视觉</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>Gamma</strong>: 一键生成，设计美观</li>
+                <li><strong>Midjourney</strong>: 图片生成天花板</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title">办公/数据</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>Copilot</strong>: Office 全家桶集成</li>
+                <li><strong>Excel Labs</strong>: 实验性插件</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="slide" style="justify-content:center; align-items:center; text-align: center;">
+      <i data-lucide="check-circle" style="width: 64px; height: 64px; color: var(--c-green); margin-bottom: 20px;"></i>
+      <h1 style="font-size: 40px; margin-bottom: 20px; color: var(--c-text);">拥抱变化，人机协作</h1>
+      <p class="text-p" style="max-width: 600px;">AI 不会取代人，但在未来，<b>会使用 AI 的人将取代不会使用 AI 的人</b>。</p>
+      <div style="margin-top: 40px;">
+        <button class="nav-btn" style="width: auto; padding: 0 30px; border-radius: 20px;" onclick="location.reload()">
+           <span style="margin-right:10px;">重新开始</span> <i data-lucide="rotate-ccw"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

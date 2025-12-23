@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 赋能业务实战培训</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="slide-container">
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn" id="btn-prev"><i data-lucide="chevron-left"></i></button>
+            <button class="nav-btn" id="btn-next"><i data-lucide="chevron-right"></i></button>
+        </div>
+
+        <!-- Slides Injection Point -->
+        <!-- Slide 1: 封面 -->
+<div class="slide cover-page active">
+    <!-- 背景装饰 -->
+    <div class="cover-bg-decoration"></div>
+    <div class="cover-bg-orb"></div>
+
+    <div class="cover-content">
+        <div class="tag" style="margin-bottom: 24px; background:var(--c-surface-2);">AI 业务赋能系列课程</div>
+
+        <div class="cover-title">从大语言模型 (LLM) 底层逻辑<br>到业务实战</div>
+
+        <div class="cover-subtitle">AI 赋能办公、文档处理、PPT 生成、数据分析与提效工具的体系分享</div>
+
+        <div class="cover-author">
+            <div class="cover-author-avatar">
+                <i data-lucide="user" style="width:24px;"></i>
+            </div>
+            <div>
+                <div style="font-size:14px; color:var(--c-text-2);">主讲人</div>
+                <div style="font-weight:700; color:var(--c-text); font-size:20px;">李帛润</div>
+            </div>
+        </div>
+
+        <div class="cover-meta">
+            <div style="display:flex; align-items:center; gap:6px;">
+                <i data-lucide="clock" style="width:16px; color:var(--c-primary);"></i>
+                <span>1小时</span>
+            </div>
+            <div style="width:1px; height:16px; background:var(--c-border);"></div>
+            <div style="display:flex; align-items:center; gap:6px;">
+                <i data-lucide="users" style="width:16px; color:var(--c-primary);"></i>
+                <span>业务视角专项</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Slide 2: 目录 -->
+<div class="slide">
+    <div class="toc-container">
+        <!-- 左侧：标题与目标 -->
+        <div class="toc-sidebar">
+            <div class="toc-title-group">
+                <div class="toc-title-sub">Agenda</div>
+                <div class="toc-title-main">课程大纲</div>
+            </div>
+
+            <div
+                style="font-size:14px; font-weight:700; color:var(--c-text-3); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">
+                核心目的 · Objectives</div>
+
+            <div class="objective-box">
+                <h4><i data-lucide="brain-circuit"
+                        style="width:16px; margin-right:6px; vertical-align:text-bottom;"></i>底层认知</h4>
+                <p>理解 LLM 概率预测本质，祛魅 AI 幻觉。</p>
+            </div>
+
+            <div class="objective-box">
+                <h4><i data-lucide="briefcase"
+                        style="width:16px; margin-right:6px; vertical-align:text-bottom;"></i>场景落地</h4>
+                <p>将 AI 植入文档、PPT、数据的真实工作流。</p>
+            </div>
+
+            <div class="objective-box" style="border-left-color: var(--c-green);">
+                <h4><i data-lucide="trending-up"
+                        style="width:16px; margin-right:6px; vertical-align:text-bottom;"></i>效率量化</h4>
+                <p>掌握只需 20% 时间完成 80% 工作的具体方法。</p>
+            </div>
+        </div>
+
+        <!-- 右侧：目录列表 -->
+        <div class="toc-content">
+            <div class="toc-new-list">
+                <div class="toc-new-item">
+                    <div class="toc-new-num">01</div>
+                    <div>
+                        <div class="toc-new-text">原理：理解 AI / LLM</div>
+                        <div class="toc-new-desc">建立正确认知，识别能力边界与幻觉</div>
+                    </div>
+                </div>
+
+                <div class="toc-new-item">
+                    <div class="toc-new-num">02</div>
+                    <div>
+                        <div class="toc-new-text">文档 + 文案</div>
+                        <div class="toc-new-desc">从 0 到 1 生成文档，专业化表达优化</div>
+                    </div>
+                </div>
+
+                <div class="toc-new-item">
+                    <div class="toc-new-num">03</div>
+                    <div>
+                        <div class="toc-new-text">PPT 效率升级</div>
+                        <div class="toc-new-desc">结构生成、内容填充与图表自动化</div>
+                    </div>
+                </div>
+
+                <div class="toc-new-item">
+                    <div class="toc-new-num">04</div>
+                    <div>
+                        <div class="toc-new-text">数据分析与洞察</div>
+                        <div class="toc-new-desc">Excel 自动化处理非结构化数据</div>
+                    </div>
+                </div>
+
+                <div class="toc-new-item">
+                    <div class="toc-new-num">05</div>
+                    <div>
+                        <div class="toc-new-text">工具推荐与落地</div>
+                        <div class="toc-new-desc">构建个人与团队的 AI 工作流</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Slide 3: Chapter 1 Title -->
+<div class="slide" style="justify-content:center; align-items:center; background: var(--g-primary); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第一章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">原理：理解 AI / LLM，建立正确认知</h2>
+</div>
+
+<!-- Slide 4: 01. AI / LLM 是什么 -->
+<div class="slide">
+    <div class="header">
+        <h1>01. AI / LLM 是什么</h1>
+        <div class="header-sub">Building Correct Intuition</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Core Viewpoint -->
+        <div class="core-col">
+            <div class="core-viewpoint">
+                它是<span class="highlight">「概率预测引擎」</span><br>
+                而非「真理数据库」
+            </div>
+            <div class="core-desc">
+                不要把它当成搜索引或者百科全书。它的本质是根据上文，猜下一个概率最大的字。它不理解你的痛苦，它只是在做数学题。
+            </div>
+
+            <!-- Comparison Pill -->
+            <div
+                style="background: var(--c-surface-2); padding: 5px; border-radius: 30px; display: inline-flex; width: fit-content; gap: 5px;">
+                <div
+                    style="padding: 10px 25px; background: var(--c-red); color: white; border-radius: 25px; font-weight: bold; font-size: 14px;">
+                    ❌ 并不是: 理解 + 思考</div>
+                <div
+                    style="padding: 10px 25px; background: var(--c-green); color: white; border-radius: 25px; font-weight: bold; font-size: 14px;">
+                    ✅ 实际上: 统计 + 预测</div>
+            </div>
+        </div>
+
+        <!-- Right: Visual Process -->
+        <div class="secondary-panel">
+            <div class="neural-box">
+                <div class="neural-flow" style="display: flex; gap: 15px; align-items: stretch;">
+                    <!-- Input -->
+                    <div
+                        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+                        <span style="font-size:12px; color:var(--c-text-3); font-weight:bold;">INPUT</span>
+                        <div class="neural-node">"白日依山"</div>
+                    </div>
+
+                    <i data-lucide="arrow-right" style="color:var(--c-text-3); align-self:center;"></i>
+
+                    <!-- Probability Distribution (The Core Logic) -->
+                    <div
+                        style="flex:1; background:var(--c-text); color:white; padding:15px; border-radius:12px; font-family:monospace; font-size:14px; position:relative; overflow:hidden;">
+                        <!-- Highlight for selected -->
+                        <div
+                            style="position:absolute; top:15px; left:0; width:100%; height:26px; background:rgba(34, 197, 94, 0.2); border-left: 4px solid var(--c-green);">
+                        </div>
+
+                        <!-- List -->
+                        <div
+                            style="display:flex; justify-content:space-between; margin-bottom:6px; position:relative; z-index:2;">
+                            <span style="color:var(--c-green);">1. "尽"</span>
+                            <span>99.1%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.6;">
+                            <span>2. "高"</span>
+                            <span>0.5%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.4;">
+                            <span>3. "在"</span>
+                            <span>0.2%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; opacity:0.2;">
+                            <span>...</span>
+                        </div>
+
+                        <!-- Parameter Note -->
+                        <div
+                            style="margin-top:10px; border-top:1px solid rgba(255,255,255,0.2); font-size:10px; color:rgba(255,255,255,0.6); padding-top:8px;">
+                            ⚙️ Temperature (0.0 - 1.0)<br>决定"选最大的"还是"以此概率随机抽"
+                        </div>
+                    </div>
+
+                    <i data-lucide="arrow-right" style="color:var(--c-text-3); align-self:center;"></i>
+
+                    <!-- Output -->
+                    <div
+                        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+                        <span style="font-size:12px; color:var(--c-text-3); font-weight:bold;">OUTPUT</span>
+                        <div class="neural-node"
+                            style="border-color:var(--c-green); color:var(--c-green-600); box-shadow: 0 0 15px rgba(34,197,94,0.3);">
+                            "尽"</div>
+                    </div>
+                </div>
+                <div style="font-size:13px; color:var(--c-text-2); text-align:center; margin-top:10px;">
+                    它并不是真的懂这句诗，它只是计算出：<br>在"白日依山"后面接"尽"的概率最大。
+                </div>
+            </div>
+
+            <!-- Insight Card -->
+            <div class="flow-card" style="border-color: var(--c-primary);">
+                <div class="flow-step-number" style="background: none; padding: 0;">💡</div>
+                <div class="flow-content">
+                    <h4>所以，输入质量决定输出质量</h4>
+                    <p>因为它是算出来的，如果你给的条件（Prompt）模糊，它的计算结果就会发散（胡说八道）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: 02. AI 的能力边界 -->
+<div class="slide">
+    <div class="header">
+        <h1>02. AI 的能力边界</h1>
+        <div class="header-sub">Know When NOT to Use It</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Core Viewpoint (The Filter) -->
+        <div class="core-col">
+            <div class="core-viewpoint">
+                不要让它<br>做<span class="highlight">「高风险决策」</span>
+            </div>
+            <div class="core-desc">
+                AI 会产生幻觉 (Hallucination)。在用它之前，先过一遍这个「三步过滤法」。
+            </div>
+
+            <!-- The Filter Process -->
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="flow-card">
+                    <div class="flow-step-number">1</div>
+                    <div class="flow-content">
+                        <h4>要负法律/财务责任吗？</h4>
+                        <p style="color: var(--c-red);">如果是 → 必须人工审核，或不用 AI</p>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step-number">2</div>
+                    <div class="flow-content">
+                        <h4>必须 100% 事实准确吗？</h4>
+                        <p style="color: var(--c-amber-600);">如果是 → 慎用，AI 可能会瞎编数据</p>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step-number">3</div>
+                    <div class="flow-content">
+                        <h4>需要真实且细腻的情感吗？</h4>
+                        <p style="color: var(--c-text-2);">如果是 → AI 写的情感通常很"油腻"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Examples (Visual Balance) -->
+        <div class="secondary-panel" style="justify-content: center;">
+            <div style="display: grid; gap: 20px;">
+                <!-- Good At -->
+                <div
+                    style="background: var(--c-surface-1); padding: 25px; border-radius: 12px; border: 1px solid var(--c-border);">
+                    <div
+                        style="display:flex; align-items:center; gap:10px; margin-bottom:15px; color:var(--c-green-600);">
+                        <i data-lucide="check-circle"></i>
+                        <h3 style="margin:0; font-size:20px;">大胆用 (Sweet Spot)</h3>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <span class="tag" style="justify-content:center;">总结摘要</span>
+                        <span class="tag" style="justify-content:center;">润色文字</span>
+                        <span class="tag" style="justify-content:center;">格式转换</span>
+                        <span class="tag" style="justify-content:center;">创意脑暴</span>
+                        <span class="tag" style="justify-content:center;">写代码 (Copilot)</span>
+                        <span class="tag" style="justify-content:center;">翻译</span>
+                    </div>
+                </div>
+
+                <!-- Bad At -->
+                <div
+                    style="background: var(--c-surface-1); padding: 25px; border-radius: 12px; border: 1px solid var(--c-border); opacity: 0.8;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px; color:var(--c-red);">
+                        <i data-lucide="x-circle"></i>
+                        <h3 style="margin:0; font-size:20px;">别太信 (Danger Zone)</h3>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">医疗诊断</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">法律咨询</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">复杂数学逻辑</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">实时新闻查询</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: 03. 提示词与工程化能力 -->
+<div class="slide">
+    <div class="header">
+        <h1>03. 提示词与工程化能力</h1>
+        <div class="header-sub">Structured Input = Quality Output</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: The Formula (Big & Visual) -->
+        <div class="core-col">
+            <div class="core-viewpoint" style="font-size: 32px; margin-bottom: 20px;">
+                好结果 = <br><span class="highlight">结构化指令</span> + <span class="highlight">工程化辅助</span>
+            </div>
+
+            <!-- The Burger Formula -->
+            <div class="formula-stack" style="width: 100%; margin-bottom: 30px;">
+                <div class="formula-block" style="background: #4338ca; padding: 12px;">🧔 立角色 (Role)</div>
+                <div class="formula-plus" style="font-size: 16px; margin: 4px 0;">+</div>
+                <div class="formula-block" style="background: #15803d; padding: 12px;">📋 派任务 (Task)</div>
+                <div class="formula-plus" style="font-size: 16px; margin: 4px 0;">+</div>
+                <div class="formula-block" style="background: #a16207; padding: 12px;">⛓️ 定约束 (Constraints)</div>
+            </div>
+
+            <div class="core-desc" style="font-size: 16px; margin-bottom: 0;">
+                提示词只是"软技能"，真正的威力在于理解<strong style="color:var(--c-text);">工程化原理</strong>。
+            </div>
+        </div>
+
+        <!-- Right: Engineering Mindset (Process) -->
+        <div class="secondary-panel">
+
+            <!-- Context & Reset Point -->
+            <div class="flow-card" style="flex-direction: column; gap: 12px; align-items: stretch;">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <div class="flow-step-number">原理 1</div>
+                    <h4 style="margin:0;">上下文其实是"拼接文本"</h4>
+                </div>
+
+                <!-- Visualization of context concatenation -->
+                <div
+                    style="background: var(--c-surface-2); padding: 10px; border-radius: 6px; font-family: monospace; font-size: 10px; color: var(--c-text-2); border: 1px dashed var(--c-border);">
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-primary);">[User]</span>: 你好</div>
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-green);">[AI]</span>: 你好，请问有什么帮您？</div>
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-primary);">[User]</span>: 帮我写个文案...</div>
+                    <div style="color:var(--c-text-3);">... (每次对话，其实都是把上面所有内容打包发给 AI) ...</div>
+                </div>
+
+                <p style="font-size: 13px;">
+                    <strong>👉 为什么要"及时重置"？</strong><br>
+                    因为 AI 实际上没有记忆。所谓的"多轮对话"只是把历史记录<b>一次性喂给它</b>。
+                    如果上个任务做了财报分析，不点重置直接写诗，历史的"财报数据"会作为噪音干扰创作。
+                </p>
+            </div>
+
+            <!-- Tool Use Point -->
+            <div class="flow-card" style="flex-direction: column; gap: 12px; align-items: stretch;">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <div class="flow-step-number">原理 2</div>
+                    <h4 style="margin:0;">AI 没有手，工程化是它的外骨骼</h4>
+                </div>
+
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--c-surface-2); padding: 10px; border-radius: 8px;">
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 24px; margin-bottom: 4px;">🧠</div>
+                        <div style="font-size: 12px; font-weight: bold;">LLM (大脑)</div>
+                        <div style="font-size: 10px; color: var(--c-text-2);">只输出文本指令</div>
+                        <div style="font-size: 10px; color: var(--c-primary); margin-top:2px;">"去调用计算器..."</div>
+                    </div>
+                    <i data-lucide="arrow-right" style="color: var(--c-text-3); width: 16px;"></i>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 24px; margin-bottom: 4px;">⚙️</div>
+                        <div style="font-size: 12px; font-weight: bold;">工程层 (App)</div>
+                        <div style="font-size: 10px; color: var(--c-text-2);">拦截指令并执行</div>
+                        <div style="font-size: 10px; color: var(--c-green); margin-top:2px;">执行 python 代码</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 13px;">
+                    <strong>👉 为什么它能联网/算数？</strong><br>
+                    ChatGPT/豆包并不是自己算的。它们只是生成了"调用搜索"的文本指令，然后<b>软件程序</b>去执行了搜索，再把结果喂回给 AI 阅读。
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: 04. AI 落地通用框架 -->
+<div class="slide">
+    <div class="header">
+        <h1>04. AI 落地通用框架</h1>
+        <div class="header-sub">Core Framework for Implementation</div>
+    </div>
+
+    <!-- Center layout for this slide to see big picture -->
+    <div
+        style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:60px;">
+
+        <div class="core-viewpoint" style="text-align:center;">
+            面对新场景<br>请遵循<span class="highlight">「价值—方法—边界」</span>思考模型
+        </div>
+
+        <!-- The Big Process Arrow -->
+        <div class="framework-arrow" style="width: 100%; max-width: 900px; box-shadow: var(--sh-xl);">
+            <div class="framework-step" style="background: var(--c-green);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 1</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Why: 价值</div>
+                <div style="font-size: 16px; line-height: 1.4;">这事儿值得用 AI 吗？<br>是高频重复，还是需要创意？</div>
+            </div>
+            <div class="framework-step" style="background: var(--c-primary);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 2</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">How: 方法</div>
+                <div style="font-size: 16px; line-height: 1.4;">拆解任务 + 黄金 Prompt + <br>必要的工具链</div>
+            </div>
+            <div class="framework-step" style="background: var(--c-amber-600);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 3</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Limits: 边界</div>
+                <div style="font-size: 16px; line-height: 1.4;">人工必须在哪里介入？<br>最坏结果是什么？</div>
+            </div>
+        </div>
+
+        <!-- Application Examples -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:30px; width: 100%; max-width: 900px;">
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">文档与文案</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">草稿 / 摘要 / 润色</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">PPT 制作</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">结构 / 大纲 / 内容填充</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">数据处理</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">清洗 / 提取 / 简单分析</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Slide 5: Chapter 2 Title -->
+<div class="slide"
+    style="justify-content:center; align-items:center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第二章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">文档 + 文案：高频办公场景的直接提效</h2>
+</div>
+
+<!-- Slide 6: Core Values -->
+<div class="slide">
+    <div class="docs-role-layout">
+        <!-- Left Title -->
+        <div class="docs-role-left">
+            <div class="docs-role-title-en">Core Roles<br>of AI in Writing</div>
+            <div class="docs-role-title-cn">AI 文档写作的<br>三重角色</div>
+        </div>
+
+        <!-- Right 3-Cards -->
+        <div class="docs-role-grid">
+            <div class="role-card">
+                <div class="role-card-icon">🎤</div>
+                <div class="role-card-title">采访者</div>
+                <div class="role-card-desc">通过提问把你散乱的想法"问"出来，挖掘真实经历。</div>
+                <div class="role-core-tag">适用：复盘 / 总结</div>
+            </div>
+
+            <div class="role-card">
+                <div class="role-card-icon">🔧</div>
+                <div class="role-card-title">工具人</div>
+                <div class="role-card-desc">处理扩写、润色、格式化等体力活，让你专注思考。</div>
+                <div class="role-core-tag">适用：报告 / 文档</div>
+            </div>
+
+            <div class="role-card">
+                <div class="role-card-icon">🪞</div>
+                <div class="role-card-title">镜子</div>
+                <div class="role-card-desc">比你更客观的视角，发现逻辑漏洞和表达问题。</div>
+                <div class="role-core-tag">适用：文章打磨</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Quote -->
+    <div class="docs-role-footer">
+        <div class="footer-quote">
+            💎 核心原则：<span>人定灵魂，AI 做体力活</span>。你的观点、经历和判断才是内容的灵魂。
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Method 1 - Conversational -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            🎤 对话式创作
+            <span class="method-subtitle">让 AI 把你的想法"问"出来</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <!-- Left: Interactive Process Flow -->
+        <div class="interactive-container" id="process-flow-conversation">
+            <!-- Tabs -->
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchDocStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">设定框架</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">逐个回答</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">一键成文</div>
+                </div>
+                <div class="step-tab" onclick="switchDocStep(3)">
+                    <div class="tab-badge">STEP 4</div>
+                    <div class="tab-name">人工润色</div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 设定采访框架</strong>
+
+                    我想写一篇关于【主题】的文章，但还没想清楚怎么写。
+
+                    请你扮演一个资深编辑，通过提问帮我梳理思路。规则如下：
+                    1. 一次只问一个问题
+                    2. 根据我的回答追问细节
+                    3. 问题要能挖掘我的真实经历和独特观点
+                    4. 大概问 8-10 个问题
+                    5. 问完后帮我整理成文章大纲
+
+                    现在开始第一个问题。</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 像聊天一样回答</strong>
+
+                    AI 会问类似这样的问题：
+                    • "你是从什么时候开始接触这个领域的？"
+                    • "遇到过最大的困难是什么？怎么解决的？"
+                    • "如果只能给新手一个建议，你会说什么？"
+
+                    (你只需讲清楚事实和观点，不用管结构)</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 一键成文</strong>
+
+                    根据我们的对话，请帮我：
+                    1. 整理成一篇文章的初稿
+                    2. 保留我的原话和表达风格
+                    3. 补充必要的过渡段落
+                    4. 标注哪些地方需要我补充细节</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工润色 (注入灵魂)</strong>
+
+                    • 调整段落顺序，让逻辑更顺
+                    • 加入更生动的开头和结尾
+                    • 补充 AI 问不出来的细节 (隐性知识)
+                    • 删掉 AI 套话，保留干货</div>
+            </div>
+        </div>
+
+        <script>
+            function switchDocStep(index) {
+                const container = document.getElementById('process-flow-conversation');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+
+                tabs.forEach((tab, i) => {
+                    if (i === index) tab.classList.add('active');
+                    else tab.classList.remove('active');
+                });
+
+                boxes.forEach((box, i) => {
+                    if (i === index) box.classList.add('active');
+                    else box.classList.remove('active');
+                });
+            }
+        </script>
+
+        <!-- Right: Insight -->
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 为什么有效？</div>
+                <div class="core-insight-text">
+                    你不用费劲去想，只需要<strong>回答问题</strong>。<br><br>
+                    文章的观点、经历和判断都 <strong>来自你自己</strong>，AI 只是帮你梳理。<br><br>
+                    这更接近<strong>"记者采访"</strong>而非 AI 代写。
+                </div>
+            </div>
+
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 年终总结、项目复盘<br>• 经验分享、踩坑记录<br>• 任何"有想法但写不出来"的时候</p>
+                </div>
+                <div class="info-card">
+                    <h4>💎 核心观念</h4>
+                    <p>署名永远属于提供内容的人，而不是拿着工具的人。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Slide 8: Method 2 - Outline -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            📋 大纲式创作
+            <span class="method-subtitle">你定骨架，AI 填肉</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <!-- Left: Interactive Process Flow -->
+        <div class="interactive-container" id="process-flow-outline">
+            <!-- Tabs -->
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchOutlineStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">写详细大纲</div>
+                </div>
+                <div class="step-tab" onclick="switchOutlineStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">AI 扩写</div>
+                </div>
+                <div class="step-tab" onclick="switchOutlineStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">人工修改</div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 写详细大纲</strong>
+
+                    ## 文章大纲：产品经理 2024 年终总结
+
+                    ### 一、年度概览
+                    - 核心成就：负责 [项目 A]，实现营收 [X] 万
+                    - 关键数据：DAU 增长 30%，用户满意度提升 10%
+
+                    ### 二、重点项目复盘 (STAR 模型)
+                    - 背景 (S)：竞品推出新功能，导致我方用户流失
+                    - 任务 (T)：3个月内挽回流失用户，稳定大盘
+                    - 动作 (A)：
+                    1. 用户调研，定位核心痛点
+                    2. 快速迭代版本，优化 [核心功能]
+                    3. 联合运营部开展 [活动名称]
+                    - 结果 (R)：流失率下降 5%，回流用户 [X] 人
+
+                    ### 三、 个人成长与不足
+                    - 成长：数据分析能力、跨部门协作能力
+                    - 不足：项目排期预估不够准确
+
+                    ### 四、2025 规划
+                    - 目标：探索 AI 在业务中的落地场景</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 让 AI 扩写</strong>
+
+                    请根据以下大纲扩写文章：
+
+                    [粘贴大纲]
+
+                    要求：
+                    1. 严格按照大纲结构
+                    2. 每个观点都要有具体论证
+                    3. 语气：专业但不学究，像在和朋友聊天
+                    4. 总字数：2000字左右</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工修改</strong>
+
+                    AI 扩写的内容通常「正确但平淡」，你需要：
+                    • 把开头改得更抓人
+                    • 加入自己的真实案例
+                    • 删掉 AI 的套话（「总之」「综上所述」）
+                    • 调整语气，让它更像「你」</div>
+            </div>
+        </div>
+
+        <script>
+            function switchOutlineStep(index) {
+                const container = document.getElementById('process-flow-outline');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <!-- Right: Insight -->
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 核心逻辑</div>
+                <div class="core-insight-text">
+                    关键在于：<strong>大纲要足够详细，观点要足够明确。</strong><br><br>
+                    当大纲足够细的时候，AI 扩写出来的东西，<strong>90% 都堪用。</strong>
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 观点文、评论文<br>• 教程、指南类文章<br>• 任何你已经想清楚「要说什么」的文章</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Method 3 - Completion -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            ✍️ 补充式创作
+            <span class="method-subtitle">你写开头，AI 接着写</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-completion">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchCompletionStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">写段落开头</div>
+                </div>
+                <div class="step-tab" onclick="switchCompletionStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">AI 补充</div>
+                </div>
+                <div class="step-tab" onclick="switchCompletionStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">替换润色</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 我的文章草稿（请补充完整）</strong>
+
+                    去年我做了一个决定，这可能是我职业生涯最重要的转折点。
+                    [请补充：描述这个决定是什么，当时的背景]
+
+                    做这个决定的时候，其实我很犹豫。
+                    [请补充：犹豫的原因，内心的挣扎]
+
+                    但最终推动我行动的，是一件小事。
+                    [请补充：一个具体的触发事件]
+
+                    现在一年过去了，我想分享三个最大的收获。
+                    [请补充：三个收获，每个100字左右]</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: AI 补充</strong>
+
+                    请根据我的草稿，补充 [请补充] 标注的部分。
+
+                    要求：
+                    1. 保持我的叙述风格
+                    2. 内容要具体，不要空泛
+                    3. 补充的内容要和我的开头自然衔接</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 替换和润色</strong>
+
+                    AI 补充的内容是「通用」的，你需要：
+                    • 把通用案例替换成你的真实经历
+                    • 把抽象描述改成具体细节
+                    • 确保前后文衔接自然</div>
+            </div>
+        </div>
+
+        <script>
+            function switchCompletionStep(index) {
+                const container = document.getElementById('process-flow-completion');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 掌控力</div>
+                <div class="core-insight-text">
+                    你写每个段落的开头一两句，把起承转合做好，AI 负责补充完整。<br><br>
+                    <strong>文章的节奏和走向完全由你控制。</strong>
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 叙事类文章、故事分享<br>• 有思路但懒得写完整<br>• 需要快速产出初稿</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Method 4 - Inspiration -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            💡 灵感激发
+            <span class="method-subtitle">让 AI 帮你打开思路</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-inspiration">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchInspirationStep(0)">
+                    <div class="tab-badge">SCENARIO 1</div>
+                    <div class="tab-name">选题迷茫</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(1)">
+                    <div class="tab-badge">SCENARIO 2</div>
+                    <div class="tab-name">观点枯竭</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(2)">
+                    <div class="tab-badge">SCENARIO 3</div>
+                    <div class="tab-name">结构卡壳</div>
+                </div>
+                <div class="step-tab" onclick="switchInspirationStep(3)">
+                    <div class="tab-badge">KEY</div>
+                    <div class="tab-name">筛选组合</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 选题迷茫</strong>
+
+                    我想写关于【领域】的内容，目标读者是【人群】。
+
+                    请帮我：
+                    1. 列出 10 个可能的选题角度
+                    2. 每个角度说明：为什么读者会感兴趣、有什么独特价值
+                    3. 标注哪些是常见角度，哪些是新颖角度</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 观点枯竭</strong>
+
+                    我要写一篇关于【主题】的文章，但感觉没什么新鲜观点可说。
+
+                    请帮我：
+                    1. 列出关于这个主题的 5 个常见观点
+                    2. 针对每个常见观点，提供一个「反常识」的角度
+                    3. 给出 3 个可能被忽视的切入点</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 结构卡壳</strong>
+
+                    我想表达的核心观点是：[你的观点]
+
+                    请帮我想 5 种不同的文章结构来呈现这个观点：
+                    1. 每种结构的逻辑主线
+                    2. 各自的优缺点
+                    3. 适合什么样的读者</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 筛选和组合</strong>
+
+                    AI 给的建议通常有好有坏。你的工作是：
+                    • 筛选出有价值的角度
+                    • 组合成你自己的思路
+                    • 加入你独特的理解
+
+                    AI 是头脑风暴的伙伴，不是决策者。</div>
+            </div>
+        </div>
+
+        <script>
+            function switchInspirationStep(index) {
+                const container = document.getElementById('process-flow-inspiration');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 核心逻辑</div>
+                <div class="core-insight-text">
+                    <strong>问题不在"没有灵感"，而在"灵感太散"。</strong><br><br>
+                    选题决定了文章的流量潜力。写作前花时间<strong>「压缩灵感、收敛选题」</strong>，往往比纠结文笔本身更关键。<br><br>
+                    (AI 是帮你打开思路的工具，但收敛决策的必须是你)
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 选题阶段不知道写什么<br>• 写到一半卡住<br>• 文章平淡想找新角度</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Method 5 - Refinement -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            🔧 改写优化
+            <span class="method-subtitle">你写初稿，AI 帮你升级</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-refinement">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchRefinementStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">AI 毒舌诊断</div>
+                </div>
+                <div class="step-tab" onclick="switchRefinementStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">针对性优化</div>
+                </div>
+                <div class="step-tab" onclick="switchRefinementStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">人工取舍</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Prompt: 毒舌主编诊断</strong>
+
+                    这是我写的初稿：
+
+                    [粘贴初稿]
+
+                    可以压缩成一段短指令，用来当通用提示词：
+
+                    ---
+
+                    从现在起，你是一个冷静刻薄的「内容主编」，禁止恭维和客套，不用迎合我的观点，要站在比我更外部的视角审稿。 请你专门按照这 8 点挑毛病：
+                    1）有没有「活人」的思考过程；  
+                    2）故事节奏有没有起伏；  
+                    3）有没有让读者共鸣的真实痛点；  
+                    4）是否始终围绕「AI 创业者/AI 产品人」这个人设；  
+                    5）读者有没有明确的信息增益；  
+                    6）案例是否足够好玩，有记忆点；  
+                    7）目标受众是谁，范围是否合适；  
+                    8）语气是否像在跟读者对话、能激发评论。  
+                    每一点都请给出具体问题和修改建议，而不是泛泛而谈。
+                </div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 针对性优化</strong>
+
+                    根据诊断结果，让 AI 帮你优化特定部分：
+
+                    请帮我改写文章的开头，要求：
+                    - 更抓人眼球
+                    - 快速切入主题
+                    - 保留我的核心信息
+
+                    原开头：[粘贴]</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 人工取舍</strong>
+
+                    AI 的修改建议不一定都对。你需要判断：
+                    • 哪些修改让文章更好了
+                    • 哪些修改丢失了你的风格
+                    • 最终版本要像「你」写的</div>
+            </div>
+        </div>
+
+        <script>
+            function switchRefinementStep(index) {
+                const container = document.getElementById('process-flow-refinement');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card">
+                <div class="core-insight-title">⭐️ 优化逻辑</div>
+                <div class="core-insight-text">
+                    <strong>不是让 AI 重写，而是让 AI 在你的基础上优化。</strong><br><br>
+                    初稿不用追求完美，哪怕是流水账也行，先把想说的写出来。
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 重要文章反复打磨<br>• 感觉写得不好但不知问题在哪<br>• 想通过 AI 反馈提升水平</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Method 6 - Material Integration -->
+<div class="slide">
+    <div class="method-header">
+        <div class="method-title">
+            📚 素材整合
+            <span class="method-subtitle">喂资料，出初稿</span>
+        </div>
+    </div>
+
+    <div class="ppt-method-grid">
+        <div class="interactive-container" id="process-flow-material">
+            <div class="step-tabs">
+                <div class="step-tab active" onclick="switchMaterialStep(0)">
+                    <div class="tab-badge">STEP 1</div>
+                    <div class="tab-name">收集素材</div>
+                </div>
+                <div class="step-tab" onclick="switchMaterialStep(1)">
+                    <div class="tab-badge">STEP 2</div>
+                    <div class="tab-name">喂给 AI</div>
+                </div>
+                <div class="step-tab" onclick="switchMaterialStep(2)">
+                    <div class="tab-badge">STEP 3</div>
+                    <div class="tab-name">大幅加工</div>
+                </div>
+            </div>
+
+            <div class="step-content-box active">
+                <div class="step-content-text"><strong>Action: 收集素材</strong>
+
+                    • 相关文章、行业报告
+                    • 你的笔记、想法碎片
+                    • 核心数据、案例资料
+
+                    推荐工具：秘塔搜索、腾讯ima...</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Prompt: 喂给 AI</strong>
+
+                    我要写一篇关于【主题】的文章。
+
+                    以下是我收集的素材：
+                    [粘贴素材]
+
+                    请根据这些素材：
+                    1. 提炼出 3-5 个核心观点
+                    2. 组织成一篇逻辑清晰的文章
+                    3. 标注哪些是素材中的内容，哪些是你补充的</div>
+            </div>
+
+            <div class="step-content-box">
+                <div class="step-content-text"><strong>Action: 大幅加工 (关键)</strong>
+
+                    ⚠️ 这种方法生成的初稿「AI 味」最重，必须大幅修改：
+
+                    • 加入你的观点和判断
+                    • 用你的语言重新表达
+                    • 补充你的案例和经历
+                    • 删掉所有套话</div>
+            </div>
+        </div>
+
+        <script>
+            function switchMaterialStep(index) {
+                const container = document.getElementById('process-flow-material');
+                const tabs = container.querySelectorAll('.step-tab');
+                const boxes = container.querySelectorAll('.step-content-box');
+                tabs.forEach((tab, i) => i === index ? tab.classList.add('active') : tab.classList.remove('active'));
+                boxes.forEach((box, i) => i === index ? box.classList.add('active') : box.classList.remove('active'));
+            }
+        </script>
+
+        <div class="insight-column">
+            <div class="core-insight-card" style="border-left-color: #ef4444;">
+                <div class="core-insight-title" style="color: #ef4444;">⚠️ 慎用提醒</div>
+                <div class="core-insight-text">
+                    这是人工投入最少的方法，但也最容易写出<strong>「AI 味」</strong>。<br><br>
+                    <strong>必须注入你的观点和判断</strong>，否则文章没有灵魂。
+                </div>
+            </div>
+            <div class="secondary-group">
+                <div class="info-card">
+                    <h4>💡 适用场景</h4>
+                    <p>• 资料整理、信息汇总<br>• 有大量素材需快速成文<br>• 不适合原创观点文章</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!DOCTYPE html>
+<!-- Chapter 3: PPT 智能生成 -->
+<!-- 
+    Structure:
+    1. Cover
+    2. One-Click Tools (NotebookLLM, Genspark)
+    3. Core Pain Points & Value
+    4. Method 1: Structure Generation
+    5. Method 2: Optimization
+    6. Visuals: Napkin.ai
+    7. Human-AI Division
+-->
+
+
+
+<!-- Slide 7: Chapter 3 Title -->
+<div class="slide"
+    style="justify-content:center; align-items:center; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第三章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">PPT：从结构到表达的效率升级</h2>
+</div>
+
+<!-- Slide 8: AI 一键生成 PPT 工具推荐 -->
+<div class="slide">
+    <div class="header" style="margin-bottom: 10px;">
+        <h1>01. AI 一键生成 PPT：路径与工具</h1>
+        <div class="header-sub">Three Technical Paths & Two Best Choices</div>
+    </div>
+
+    <!-- 顶部：三种技术流派分类 (认知框架) - 紧凑版 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border);">
+            <div style="font-weight: 700; color: var(--c-purple); margin-bottom: 2px;">🖼️ 图像模型生成</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：NanoBanana / NotebookLLM</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：极美 | 缺点：<span
+                    style="color:var(--c-red);">不可改</span></div>
+        </div>
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border);">
+            <div style="font-weight: 700; color: var(--c-primary); margin-bottom: 2px;">💻 前端代码生成</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：Genspark / Skywork</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：交互 | 缺点：<span
+                    style="color:var(--c-amber-600);">固化</span></div>
+        </div>
+        <div
+            style="background: var(--c-surface-2); padding: 8px 12px; border-radius: 6px; font-size: 12px; border: 1px solid var(--c-border); opacity: 0.6;">
+            <div style="font-weight: 700; color: var(--c-text); margin-bottom: 2px;">📝 文本+样式嵌套</div>
+            <div style="color: var(--c-text-2); font-size: 11px;">代表：Kimi / 夸克</div>
+            <div style="color: var(--c-text-3); font-size: 11px; margin-top:2px;">优点：极速 | 缺点：图文弱</div>
+        </div>
+    </div>
+
+    <!-- 中部：两大推荐产品 (实战对比) - 紧凑版 -->
+    <div class="tools-grid"
+        style="flex: 1; align-items: stretch; margin-bottom: 15px; grid-template-columns: 1fr 1fr; gap: 20px; min-height: 0;">
+        <!-- NotebookLLM 卡片 -->
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; padding: 12px; margin-bottom: 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h3 style="display:flex; align-items:center; gap:6px; margin:0; font-size: 16px;">
+                    <span style="font-size:18px;">📘</span> NotebookLLM
+                </h3>
+                <span class="tag"
+                    style="background: var(--c-purple); color: white; padding: 2px 6px; font-size: 10px;">图像生成</span>
+            </div>
+
+            <div style="font-size: 12px; margin-bottom: 8px; color: var(--c-text-2); line-height: 1.4;">
+                <strong>特性：</strong>效果精美。<strong style="color: var(--c-red);">痛点：生成即图片，不可改。</strong>
+            </div>
+
+            <div
+                style="background: var(--c-surface-2); padding: 6px; border-radius: 4px; font-size: 11px; margin-bottom: 8px; border-left: 2px solid var(--c-amber);">
+                <strong>💡 关键：</strong>必须确保上传文本<strong>100% 准确</strong>。
+            </div>
+
+            <div style="font-size: 11px; color: var(--c-text-3); margin-bottom: 6px;">
+                步骤：上传报告 → 演示 icon → 输入风格
+            </div>
+
+            <div class="img-content"
+                style="flex: 1; min-height: 80px; overflow: hidden; border-radius: 6px; border: 1px solid var(--c-border);">
+                <img src="../image/notebookLLM.png" alt="NotebookLLM Interface"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Genspark 卡片 -->
+        <div class="card" style="height: 100%; display: flex; flex-direction: column; padding: 12px; margin-bottom: 0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <h3 style="display:flex; align-items:center; gap:6px; margin:0; font-size: 16px;">
+                    <span style="font-size:18px;">✨</span> Genspark
+                </h3>
+                <span class="tag"
+                    style="background: var(--c-primary); color: white; padding: 2px 6px; font-size: 10px;">代码生成</span>
+            </div>
+
+            <div style="font-size: 12px; margin-bottom: 8px; color: var(--c-text-2); line-height: 1.4;">
+                <strong>特性：</strong>生成网页可编辑。<strong style="color: var(--c-amber-600);">限制：收费/容器固化。</strong>
+            </div>
+
+            <div
+                style="background: var(--c-surface-2); padding: 6px; border-radius: 4px; font-size: 11px; margin-bottom: 8px; border-left: 2px solid var(--c-primary);">
+                <strong>💡 用途：</strong>快速出 Demo / 灵感参考。
+            </div>
+
+            <div style="font-size: 11px; color: var(--c-text-3); margin-bottom: 6px;">
+                步骤：侧边栏 AI Slides → 输入提示词
+            </div>
+
+            <div class="img-content"
+                style="flex: 1; min-height: 80px; overflow: hidden; border-radius: 6px; border: 1px solid var(--c-border);">
+                <img src="../image/genspark.png" alt="Genspark Interface"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部：逻辑转折 (The Hook) - 紧凑版 -->
+    <div
+        style="background: linear-gradient(90deg, var(--c-surface-2) 0%, white 100%); border-left: 4px solid var(--c-primary); padding: 8px 15px; border-radius: 0 6px 6px 0; display: flex; align-items: center; justify-content: space-between; margin-bottom: 0;">
+        <div style="color: var(--c-text); font-size: 13px;">
+            <span style="font-weight: bold; color: var(--c-primary);">透过工具看本质：</span>
+            逻辑都是：<strong>理解内容 <i data-lucide="arrow-right" style="width:10px; display:inline;"></i> 梳理结构 <i
+                    data-lucide="arrow-right" style="width:10px; display:inline;"></i> 匹配版式</strong>
+        </div>
+        <div style="font-size: 12px; color: var(--c-text-2); display: flex; align-items: center; gap: 5px;">
+            掌握底层逻辑，徒手搭建更自由的 PPT
+            <i data-lucide="arrow-right-circle" style="color: var(--c-primary); width: 14px;"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: AI 辅助 PPT 制作的标准工作流 -->
+<div class="slide">
+    <div class="header">
+        <h1>02. AI 辅助 PPT 制作的标准工作流</h1>
+        <div class="header-sub">The Standard Workflow: From Structure to Slide</div>
+    </div>
+
+    <!-- 核心理念: 分而治之 -->
+    <div style="text-align:center; margin-bottom: 30px;">
+        <div style="font-size: 20px; font-weight: 300; color: var(--c-text-2);">
+            告别"打开 PPT 对着空白发呆"<br>
+            采用<span style="font-weight: 700; color: var(--c-primary);">「分而治之」</span>的策略，将 PPT 拆解为四个独立步骤
+        </div>
+    </div>
+
+    <!-- 流程图容器 -->
+    <div style="display: flex; gap: 20px; align-items: stretch; justify-content: center; height: 360px;">
+
+        <!-- Step 1: 框架 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-purple); padding: 20px 15px;">
+            <div
+                style="background:var(--c-purple); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                1</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">生成框架<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Structure)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    输入主题与目标<br>
+                    ↓<br>
+                    <strong>生成全篇大纲</strong><br>
+                    <span style="font-size:12px; color:var(--c-purple);">(定骨架)</span>
+                </p>
+            </div>
+            <i data-lucide="layout-list" style="color:var(--c-purple); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 2: 模块 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-blue-400); padding: 20px 15px;">
+            <div
+                style="background:var(--c-blue-400); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                2</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">细化模块<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Modules)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    按章节拆解<br>
+                    ↓<br>
+                    <strong>梳理核心观点</strong><br>
+                    <span style="font-size:12px; color:var(--c-blue-400);">(填血肉)</span>
+                </p>
+            </div>
+            <i data-lucide="package-open" style="color:var(--c-blue-400); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 3: 内容 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-primary); padding: 20px 15px;">
+            <div
+                style="background:var(--c-primary); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                3</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">生成页面内容<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Content)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    针对单页<br>
+                    ↓<br>
+                    <strong>写逐字稿/金句</strong><br>
+                    <span style="font-size:12px; color:var(--c-primary);">(磨细节)</span>
+                </p>
+            </div>
+            <i data-lucide="file-edit" style="color:var(--c-primary); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+        <i data-lucide="chevron-right" style="align-self:center; color:var(--c-border); width:24px;"></i>
+
+        <!-- Step 4: 视觉 -->
+        <div class="card"
+            style="flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; border-top: 4px solid var(--c-green-600); padding: 20px 15px;">
+            <div
+                style="background:var(--c-green-600); color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; margin-bottom:15px;">
+                4</div>
+            <h3 style="margin:0 0 10px 0; color:var(--c-text);">呈现页面<br><span
+                    style="font-size:14px; color:var(--c-text-2); font-weight:400;">(Visuals)</span></h3>
+            <div style="flex:1; display:flex; align-items:center;">
+                <p style="font-size:13px; color:var(--c-text-2); line-height:1.5;">
+                    图文排版<br>
+                    ↓<br>
+                    <strong>最终 PPT 页面</strong><br>
+                    <span style="font-size:12px; color:var(--c-green-600);">(做设计)</span>
+                </p>
+            </div>
+            <i data-lucide="monitor-play" style="color:var(--c-green-600); opacity:0.3; width:40px; height:40px;"></i>
+        </div>
+
+    </div>
+
+    <!-- 底部 Hook -->
+    <div style="margin-top: 30px; text-align: center; color: var(--c-text-3); font-size: 14px;">
+        👇 接下来的内容，我们将按照这个流程一步步拆解
+    </div>
+</div>
+
+<!-- Slide 10: Step 1 & 2 骨架构建 -->
+<div class="slide">
+    <div class="header">
+        <h1>03. 骨架构建：从大纲到观点</h1>
+        <div class="header-sub">Step 1 & 2: Structure & Modules</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Step 1 生成全局大纲 -->
+        <div class="core-col">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-purple);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-purple); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        1</div>
+                    <h3 style="margin:0; color:var(--c-text);">生成全局大纲 (Skeleton)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">解决痛点：</strong>"只有一个标题，不知从何下手"<br>
+                    <strong style="color:var(--c-text);">核心任务：</strong>确定页数、逻辑流、每页标题
+                </div>
+
+                <div class="prompt-box" style="font-size:12px; padding:15px; line-height: 1.5;">
+                    <div style="color: var(--c-purple); font-style: italic; margin-bottom: 8px;">{描述你的思路、想讲的内容、逻辑等}
+                    </div>
+                    <div>你是一位资深的幻灯片设计大师，现在需要完成一份ppt的大纲，要求：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1）主题：<strong style="color: #cbd5e1;">{{不限字数，越长越好}}</strong><br>
+                        2）受众：<strong style="color: #cbd5e1;">{{画像/人数/特征等}}</strong><br>
+                        3）时长：<strong style="color: #cbd5e1;">{{30分钟 or 12小时}}</strong><br>
+                        4）目的：<strong style="color: #cbd5e1;">{{汇报/培训/分享/评审}}</strong><br>
+                        5）结构：<strong style="color: #cbd5e1;">{{例:6章节,每章5要点}}</strong><br>
+                        6）页数：<strong style="color: #cbd5e1;">{{例:总页数 100 页}}</strong><br>
+                        7）要点：<strong style="color: #cbd5e1;">{{例:原理/案例/互动}}</strong><br>
+                        8）其他：<strong style="color: #cbd5e1;">{{例:模块头尾综述/总结}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-purple); color:white; opacity:0.8;">
+                    关键：限定页数与逻辑模型</div>
+            </div>
+        </div>
+
+        <!-- Right: Step 2 细化章节观点 -->
+        <div class="secondary-panel">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-blue-400);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-blue-400); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        2</div>
+                    <h3 style="margin:0; color:var(--c-text);">细化模块观点 (Key Points)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">解决痛点：</strong>"标题有了，但这页具体讲什么？"<br>
+                    <strong style="color:var(--c-text);">核心任务：</strong>提炼论据、数据、案例
+                </div>
+
+                <div class="prompt-box"
+                    style="font-size:12px; padding:15px; border-left-color: var(--c-blue-400); line-height: 1.5;">
+                    <div style="color: var(--c-blue-400); font-style: italic; margin-bottom: 8px;">{已有大纲，针对某一具体章节深化}
+                    </div>
+                    <div>你是一个逻辑严密的商业分析师。针对大纲中的<strong style="color: #cbd5e1;">{{第三章：市场痛点}}</strong>，请梳理详细逻辑：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1) 核心观点：<strong style="color: #cbd5e1;">{{一句话概括本章结论}}</strong><br>
+                        2) 叙事结构：<strong style="color: #cbd5e1;">{{SCQA / 黄金圈 / 现象-原因-对策}}</strong><br>
+                        3) 支撑论据：<strong style="color: #cbd5e1;">{{列出3-5个关键数据或案例}}</strong><br>
+                        4) 呈现建议：<strong style="color: #cbd5e1;">{{图表? 对比图? 故事?}}</strong><br>
+                        5) 过场衔接：<strong style="color: #cbd5e1;">{{如何自然过渡到下一章}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-blue-400); color:white; opacity:0.8;">
+                    关键：不仅要“什么”，更要“怎么讲”</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Step 3 & 4 内容填充与视觉 -->
+<div class="slide">
+    <div class="header">
+        <h1>04. 血肉填充：从逐字稿到视觉</h1>
+        <div class="header-sub">Step 3 & 4: Content & Visuals</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Step 3 生成页面内容 -->
+        <div class="core-col">
+            <div class="card" style="height: 100%; border-top: 4px solid var(--c-primary);">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-primary); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        3</div>
+                    <h3 style="margin:0; color:var(--c-text);">生成页面内容 (Content)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:15px;">
+                    <strong style="color:var(--c-text);">核心任务：</strong>复用文本写作技巧，将观点转化为讲稿<br>
+                    <strong style="color:var(--c-text);">Callback：</strong>Recall <span
+                        style="background:var(--c-surface-2); padding:2px 6px; border-radius:4px; font-weight:bold;">Ch.2
+                        润色/改写</span> 方法论
+                </div>
+
+                <div class="prompt-box"
+                    style="font-size:12px; padding:15px; border-left-color: var(--c-primary); line-height: 1.5;">
+                    <div style="color: var(--c-primary); font-style: italic; margin-bottom: 8px;">{已有大纲，规划单页PPT的布局与内容}
+                    </div>
+                    <div>你是一位 PPT 内容策划师。针对大纲中<strong style="color: #cbd5e1;">{{这一页的主题}}</strong>，请帮我规划：</div>
+                    <div style="margin-top: 5px; padding-left: 0;">
+                        1) 核心逻辑：<strong style="color: #cbd5e1;">{{这一页想解决什么问题/传达什么结论}}</strong><br>
+                        2) 推荐版式：<strong style="color: #cbd5e1;">{{左右对比 / 三点排比 / 流程图 / 大图背景}}</strong><br>
+                        3) 模块内容：<strong style="color: #cbd5e1;">{{根据版式，撰写每个区域的标题+正文}}</strong><br>
+                        4) 金句提炼：<strong style="color: #cbd5e1;">{{一句能作为本页 Slogan 的话}}</strong><br>
+                        5) 视觉建议：<strong style="color: #cbd5e1;">{{配图需要体现什么意象}}</strong>
+                    </div>
+                </div>
+
+                <div class="tag" style="margin-top:15px; background:var(--c-primary); color:white; opacity:0.8;">
+                    关键：用写作技巧 (Ch.2) 赋能 PPT 表达</div>
+            </div>
+        </div>
+
+        <!-- Right: Step 4 呈现页面 -->
+        <div class="secondary-panel">
+            <div class="card"
+                style="height: 100%; border-top: 4px solid var(--c-green-600); display: flex; flex-direction: column;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
+                    <div
+                        style="background:var(--c-green-600); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">
+                        4</div>
+                    <h3 style="margin:0; color:var(--c-text);">呈现页面 (Visuals)</h3>
+                </div>
+
+                <div style="font-size:14px; color:var(--c-text-2); margin-bottom:20px;">
+                    <strong style="color:var(--c-text);">核心任务：</strong>将梳理好的布局与文案落地为最终画面<br>
+                    <strong style="color:var(--c-text);">两条路径：</strong>根据能力栈选择
+                </div>
+
+                <!-- Path A: AI 代码生成 -->
+                <div
+                    style="background: var(--c-surface-2); padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--c-border);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <strong style="color: var(--c-text);">🅰️ AI 代码生成流 (Pro)</strong>
+                        <span class="tag"
+                            style="background:var(--c-green-600); color:white; font-size:10px; padding:2px 6px;">推荐</span>
+                    </div>
+                    <div style="font-size:12px; color:var(--c-text-2); line-height:1.5; margin-bottom:8px;">
+                        使用 Cursor/V0 等 AI 编辑器，直接生成网页版 PPT。
+                    </div>
+                    <div
+                        style="display:flex; align-items:center; gap:8px; background:white; padding:8px; border-radius:6px; border:1px dashed var(--c-border);">
+                        <i data-lucide="file-code" style="width:16px; color:var(--c-primary);"></i>
+                        <span
+                            style="font-size:12px; font-family:monospace; color:var(--c-text);">HTML-PPT风格设计规范.md</span>
+                    </div>
+                    <div style="font-size:10px; color:var(--c-text-3); margin-top:4px;">*以此文件作为 System Prompt</div>
+                </div>
+
+                <!-- Path B: 手动排版 -->
+                <div
+                    style="background: var(--c-surface-2); padding: 15px; border-radius: 8px; flex: 1; border: 1px solid var(--c-border);">
+                    <div style="margin-bottom:8px;">
+                        <strong style="color: var(--c-text);">🅱️ 手动排版流 (Classic)</strong>
+                    </div>
+                    <div style="font-size:12px; color:var(--c-text-2); line-height:1.5;">
+                        使用 PowerPoint / Keynote。<br>
+                        依据 Step 3 生成的<strong>"布局建议"</strong>，进行人工排版。<br>
+                        <span style="color:var(--c-text-3);">优势：自由度高，无需代码基础。</span>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 15px; font-size: 12px; color: var(--c-text-3); display: flex; align-items: center; gap: 5px;">
+                    👇 下一页：单点突破工具 (Napkin.ai)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: 图表与框架的智能生成 -->
+<div class="slide">
+    <div class="header">
+        <h1>05. 视觉突破：Napkin.ai 智能绘图</h1>
+        <div class="header-sub">Text to Visuals in Seconds</div>
+    </div>
+
+    <!-- Top Banner: 核心定位 -->
+    <div
+        style="background: var(--c-surface-1); border-radius: 12px; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border: 1px solid var(--c-border);">
+        <div>
+            <h2 style="margin: 0 0 5px 0; color: var(--c-text); font-size: 20px;">🎨 Napkin.ai - 字成图的效率美学</h2>
+            <div style="color: var(--c-text-2); font-size: 14px;">不只是工具，更是将<strong style="color:var(--c-primary);">"文字 →
+                    可视化"</strong>过程自动化的创意伙伴。</div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">手绘风</span>
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">极简</span>
+            <span class="tag" style="background: white; border: 1px solid var(--c-border);">全场景</span>
+        </div>
+    </div>
+
+    <!-- Split Bottom: Features & Demo -->
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; height: 320px; align-items: center;">
+
+        <!-- Left: Core Features (Cards) - Refined & Compact -->
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <!-- Card 1: 自动化 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-primary);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="sparkles" style="color: var(--c-primary); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">过程自动化
+                        (Effortless)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        无需调整节点，打字即出图。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: 设计感 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-purple);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="palette" style="color: var(--c-purple); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">审美在线
+                        (Aesthetic)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        独特手绘风格，极具设计感。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: 实用性 -->
+            <div class="card"
+                style="display: flex; gap: 15px; align-items: center; padding: 15px; margin: 0; border-left: 4px solid var(--c-green-600);">
+                <div
+                    style="background: var(--c-surface-2); padding: 12px; border-radius: 10px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="layers" style="color: var(--c-green-600); width: 22px; height: 22px;"></i>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 4px 0; color: var(--c-text); font-size: 15px; font-weight:700;">全场景适配
+                        (Versatile)</h4>
+                    <p style="margin: 0; font-size: 13px; color: var(--c-text-2); line-height: 1.4;">
+                        像 flomo 一样极简，专注提效。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Demo Area -->
+        <div class="secondary-panel"
+            style="background: transparent; padding: 0; border: none; display: flex; flex-direction: column; gap: 10px;">
+            <!-- Input -->
+            <div class="card"
+                style="background: #f8fafc; border: 1px dashed var(--c-border); font-size: 12px; color: var(--c-text-2); line-height: 1.6; padding: 12px; margin: 0;">
+                1. 速度快：处理时间缩短 50%<br>
+                2. 成本低：部署成本降低 30%<br>
+                3. 易扩展：支持插件化开发
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; color: var(--c-primary);">
+                <i data-lucide="arrow-down" style="width: 18px;"></i>
+            </div>
+
+            <!-- Output Image -->
+            <div class="img-content"
+                style="flex: 1; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center;">
+                <img src="../image/Napkin.png" alt="Napkin.ai Interface"
+                    style="width: 100%; height: auto; max-height: 100%; object-fit: contain;">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Slide 13: 人工与 AI 的合理分工 -->
+<div class="slide">
+    <div class="header">
+        <h1>06. 人工与 AI 的合理分工</h1>
+        <div class="header-sub">Human-AI Collaboration</div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-size: 28px; color: var(--c-text);">AI 负责<span class="highlight"
+                style="color: var(--c-primary);">「结构与内容」</span> · 人工负责<span class="highlight"
+                style="color: var(--c-red);">「判断与美化」</span></h2>
+    </div>
+
+    <div style="display: flex; gap: 40px; justify-content: center; align-items: stretch;">
+        <!-- AI Zone -->
+        <div class="card" style="width: 400px; border-top: 4px solid var(--c-primary);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--c-primary);">
+                <i data-lucide="bot" style="width: 28px; height: 28px;"></i>
+                <h3 style="margin: 0;">AI (Copilot)</h3>
+            </div>
+            <ul style="line-height: 2; color: var(--c-text-2); font-size: 16px;">
+                <li><strong>快速生成草稿：</strong>打破空白页恐惧</li>
+                <li><strong>提供逻辑框架：</strong>确保结构完整</li>
+                <li><strong>海量素材检索：</strong>寻找案例与数据</li>
+                <li><strong>自动化排版：</strong>统一视觉风格</li>
+            </ul>
+        </div>
+
+        <!-- Human Zone -->
+        <div class="card" style="width: 400px; border-top: 4px solid var(--c-red);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--c-red);">
+                <i data-lucide="user" style="width: 28px; height: 28px;"></i>
+                <h3 style="margin: 0;">Human (Pilot)</h3>
+            </div>
+            <ul style="line-height: 2; color: var(--c-text-2); font-size: 16px;">
+                <li><strong>定义核心目标：</strong>PPT 讲给谁听？</li>
+                <li><strong>把控情感连接：</strong>故事是否动人？</li>
+                <li><strong>审核事实准确：</strong>数据是否真实？</li>
+                <li><strong>最终决策权：</strong>采用哪个方案？</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tag"
+        style="margin: 40px auto 0; width: fit-content; background: var(--c-surface-2); color: var(--c-text-2);">
+        💡 核心原则：让 AI 做它擅长的（发散/执行），人做人擅长的（决策/共情）
+    </div>
+</div>
+<!-- Slide 10: Chapter 4 Title -->
+<div class="slide section-cover" data-chapter="4.0">
+    <div class="section-cover-content">
+        <div class="chapter-number">04</div>
+        <div class="chapter-title">数据分析</div>
+        <div class="chapter-subtitle">减少重复劳动,提升洞察</div>
+        <div class="decoration-line"></div>
+    </div>
+</div>
+
+<!-- Slide 11: 完整流程 -->
+<div class="slide" data-chapter="4.1">
+    <div class="header">
+        <h1>AI 数据分析的完整流程</h1>
+        <div class="header-sub">Data Analysis Workflow</div>
+    </div>
+
+    <!-- Zone 1: The 4 Core Steps -->
+    <div class="workflow-steps">
+        <div class="w-step">
+            <div class="ws-number">01</div>
+            <div class="ws-content">
+                <div class="ws-title">收集与整合</div>
+                <div class="ws-desc">多源异构数据统一</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">02</div>
+            <div class="ws-content">
+                <div class="ws-title">预处理与清洗</div>
+                <div class="ws-desc">结构化与去噪</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">03</div>
+            <div class="ws-content">
+                <div class="ws-title">分析与挖掘</div>
+                <div class="ws-desc">指标计算与洞察</div>
+            </div>
+        </div>
+        <div class="w-line"></div>
+        <div class="w-step">
+            <div class="ws-number">04</div>
+            <div class="ws-content">
+                <div class="ws-title">可视化与呈现</div>
+                <div class="ws-desc">决策报告生成</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zone 2: Case Study Visualization (Filling the void) -->
+    <div class="case-study-container">
+        <div class="cs-label">实战演示流:武汉客户招标数据分析</div>
+        <div class="cs-flow">
+            <!-- Step 1 Vis -->
+            <div class="cs-item">
+                <div class="cs-icon-group">
+                    <div class="file-icon xls">XLS</div>
+                    <div class="file-icon doc">DOC</div>
+                    <div class="file-icon pdf">PDF</div>
+                </div>
+                <div class="cs-text">原始文件堆</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 2 Vis -->
+            <div class="cs-item">
+                <div class="code-snippet-mini">
+                    <span class="c-gray">{</span><br>
+                    &nbsp;&nbsp;<span class="c-key">"client"</span>: <span class="c-val">"ABC Corp"</span>,<br>
+                    &nbsp;&nbsp;<span class="c-key">"amount"</span>: <span class="c-num">500k</span><br>
+                    <span class="c-gray">}</span>
+                </div>
+                <div class="cs-text">标准 JSON/CSV</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 3 Vis -->
+            <div class="cs-item center-highlight">
+                <div class="ai-bubble">
+                    <div class="ai-icon">✨</div>
+                    <div class="ai-text">"发现 ABC 公司招标周期有规律..."</div>
+                </div>
+                <div class="cs-text">智能洞察</div>
+            </div>
+
+            <!-- Connector -->
+            <div class="cs-arrow">➔</div>
+
+            <!-- Step 4 Vis -->
+            <div class="cs-item">
+                <div class="report-mini">
+                    <div class="r-line r-h1"></div>
+                    <div class="r-chart"></div>
+                    <div class="r-line"></div>
+                    <div class="r-line"></div>
+                </div>
+                <div class="cs-text">Markdown 决策报告</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zone 3: Efficiency Comparison Table -->
+    <div class="efficiency-box">
+        <div class="eff-col old">
+            <div class="eff-header">🚧 传统方式</div>
+            <ul class="eff-list">
+                <li>人工打开每个 Excel 复制粘贴</li>
+                <li>手写 VLOOKUP / Pivot Table</li>
+                <li>肉眼观察数据找规律</li>
+                <li><strong>耗时:4 小时+</strong></li>
+            </ul>
+        </div>
+        <div class="eff-vs">
+            <div class="vs-circle">VS</div>
+        </div>
+        <div class="eff-col new">
+            <div class="eff-header">🚀 AI 赋能</div>
+            <ul class="eff-list">
+                <li>工具一键合并/转换</li>
+                <li>自然语言提问分析</li>
+                <li>自动生成完整报告</li>
+                <li><strong>耗时:15 分钟</strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: 数据源处理 -->
+<div class="slide" data-chapter="4.2">
+    <div class="header">
+        <h1>数据收集与清洗:AI 的前置动作</h1>
+        <div class="header-sub">Data Pre-processing</div>
+    </div>
+
+    <div class="grid-2-1">
+        <!-- Left: Workflow -->
+        <div class="content-panel left-panel">
+            <div class="panel-title">不同数据源的处理路径</div>
+            <div class="flow-vertical">
+                <div class="flow-row">
+                    <div class="flow-node source-node">📝 Word / PDF</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">直接投喂 AI</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node result-node">结构化提取</div>
+                </div>
+                <div class="divider-dashed"></div>
+                <div class="flow-row">
+                    <div class="flow-node source-node">📊 单个 Excel</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">转文本工具</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node result-node">CSV / Markdown</div>
+                </div>
+                <div class="divider-dashed"></div>
+                <div class="flow-row">
+                    <div class="flow-node source-node">📚 多个 Excel</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node human-action">人工合并单表</div>
+                    <div class="flow-line">→</div>
+                    <div class="flow-node action-node">转文本清洗</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Tips -->
+        <div class="content-panel right-panel">
+            <div class="panel-title">✅ 自查清单 (Checklist)</div>
+            <div class="checklist-grid">
+                <div class="check-item">
+                    <span class="check-icon">📝</span>
+                    <span class="check-text">转为纯文本 (CSV)</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🔗</span>
+                    <span class="check-text">合并为单表</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🧹</span>
+                    <span class="check-text">删除冗余列</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">📏</span>
+                    <span class="check-text">统一金额单位</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🏷️</span>
+                    <span class="check-text">标记异常值</span>
+                </div>
+                <div class="check-item">
+                    <span class="check-icon">🗂️</span>
+                    <span class="check-text">标准化枚举值</span>
+                </div>
+                <div class="check-item full-width">
+                    <span class="check-icon">ℹ️</span>
+                    <span class="check-text">说明数据规模与抽样方式</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: 协作分析与自动化 -->
+<div class="slide" data-chapter="4.3">
+    <div class="header">
+        <h1>协作分析:让 AI 懂你的业务</h1>
+        <div class="header-sub">Collaborative Analysis & Automation</div>
+    </div>
+
+    <div class="analysis-layout">
+        <!-- 左侧:自动化流程 -->
+        <div class="analysis-sidebar">
+            <div class="method-card">
+                <div class="card-icon">⚡️</div>
+                <h3>自动化工作流</h3>
+                <!-- 微型流程图 -->
+                <div class="mini-flow">
+                    <div class="mf-step">
+                        <div class="mf-icon">🤖</div>
+                        <div class="mf-text">Trae/AI</div>
+                    </div>
+                    <div class="mf-arrow">↓</div>
+                    <div class="mf-step">
+                        <div class="mf-icon">📝</div>
+                        <div class="mf-text">Markdown</div>
+                    </div>
+                    <div class="mf-arrow">↓</div>
+                    <div class="mf-step">
+                        <div class="mf-icon">📊</div>
+                        <div class="mf-text">可视化报告</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-card">
+                <div class="card-header">💡 核心技巧</div>
+                <div class="tips-content">
+                    <div class="tip-point">
+                        <strong>分阶段</strong>:不要一次性给太长指令,让 AI 先建立认知。
+                    </div>
+                    <div class="tip-point">
+                        <strong>定格式</strong>:强制要求输出 Markdown,便于直接复制转换。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧:提示词模板 (上下两栏布局) -->
+        <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; overflow: hidden;">
+
+            <!-- 第一步卡片 -->
+            <div class="prompt-main" style="flex: 1; min-height: 0;">
+                <div class="prompt-toolbar">
+                    <span class="toolbar-title">📋 第一步:提取数据指标</span>
+                    <span class="toolbar-action" data-target="promptStep1">COPY</span>
+                </div>
+                <div class="prompt-editor large-text" id="promptStep1">## 角色
+                    你是一名**业务数据与文本分析的指标抽象助手**，擅长从原始业务数据中，**提炼“可分析的业务指标或纬度报告”**，用于后续业务分析、洞察与决策支持。
+
+                    ## 你的目标
+                    从我提供的内容中，**自动提炼出“可以被分析的指标体系”**，帮助业务人员理解：
+                    - 这份内容“可以从哪些角度分析”
+                    - 每个角度下“可以算什么指标、怎么大致算”
+
+                    ## 重要限制
+                    - 不要给出任何分析结论
+                    - 不要评价好坏、趋势、原因、建议
+                    - 只输出【可分析的指标与分析维度】
+
+                    ## 内容理解原则
+                    1. 自动判断输入内容的形态：
+                    - 结构化数据（如表格、字段、数值）
+                    - 非结构化文本（如报告、公告、描述性文字）
+                    - 或两者混合
+                    2. 自动识别其中的：
+                    - 对象类信息（如客户、员工、项目、产品、机构等）
+                    - 时间类信息
+                    - 数值/规模类信息（金额、数量、频次、周期等）
+                    - 分类/属性类信息（行业、地区、类型、状态等）
+                    3. 不预设行业、不预设业务类型，仅基于输入内容本身抽象分析可能性。
+
+                    ## 输出要求（全部使用 Markdown）
+
+                    ### 可分析的核心维度列表
+                    先输出一个列表，说明**基于当前内容，可以从哪些分析维度入手**。
+                    示例（仅示意，需根据实际内容生成）：
+                    - 对象价值维度
+                    - 时间节奏与周期维度
+                    - 规模与结构分布维度
+                    - 行为频次与活跃度维度
+                    - 对比与分层维度
+
+                    ### 各分析维度下的指标清单
+                    针对每一个分析维度，输出若干“可分析指标”，结构如下：
+
+                    #### 📌 分析维度：{自动命名}
+                    1. **指标名称**
+                    - **指标含义**：一句话说明这个指标在衡量什么
+                    - **主要依据内容**：来自哪些字段 / 文本信息 / 数据特征
+                    - **计算或抽象方式**：用自然语言说明大致怎么算或如何提取
+                    - **可对比/拆分的维度**：可以按哪些条件做分组、排序或对比
+
+                    2. **指标名称**
+                    - 同上结构
+
+                    > 说明：
+                    > - 若输入是文本，可将“指标”理解为【可量化 / 可对比 / 可统计的要素】
+                    > - 若字段含义不完全明确，可用“若该字段表示……则可用于……”的方式描述
+
+                    ## 通用约束
+                    - 不新增输入中不存在的信息
+                    - 不预设业务目标、业务结论或业务动作
+                    - 只回答“**这份内容可以怎么被分析**”，不回答“分析后说明什么”
+
+                    ## 待分析内容
+                    {{在这里粘贴需要分析的 Excel 数据 / 报告正文 / 公告 / 任意业务内容}}</div>
+            </div>
+
+            <!-- 第二步卡片 -->
+            <div class="prompt-main" style="flex: 1; min-height: 0;">
+                <div class="prompt-toolbar">
+                    <span class="toolbar-title">📊 第二步:生成可视化报告</span>
+                    <span class="toolbar-action" data-target="promptStep2">COPY</span>
+                </div>
+                <div class="prompt-editor large-text" id="promptStep2">## 角色
+                    你是一名**专业的数据分析顾问**，擅长基于结构化数据字段进行分析解读与洞察提炼。
+
+                    ## 背景信息
+                    请基于一份关于 {分析对象说明，例如：某区域 / 某业务 / 某客户群} 的结构化数据进行分析。
+                    - 数据来源：{{Excel 文件或数据表名称}}
+                    - 分析对象：{{行粒度说明，例如：客户 / 项目 / 订单 / 用户 / 事件等描述}}
+                    - 字段说明（来自 Excel 表头）：
+                    - {{字段1名称}}：{{字段含义}}
+                    - {{字段2名称}}：{{字段含义}}
+                    - {{字段3名称}}：{{字段含义}}
+                    - {{……可继续补充}}
+                    - 当前分析时间：{{YYYY-MM-DD}}
+                    - 分析目的：{{本次数据分析希望回答的问题或支持的决策}}
+
+                    ## 输出要求
+                    请输出一份完整分析报告，以Markdown格式输出，包含：
+                    1. 数据概览与关键指标
+                    2. 多维度深度分析
+                    3. 趋势洞察与建议
+                    4. 可视化图表建议
+
+                    请输出一份完整分析报告，以Markdown格式输出，请开始输出。</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14 Removed (Merged into above) -->
+
+
+<!-- Slide 15 Removed -->
+
+<script>
+    // 通用复制功能
+    document.addEventListener('DOMContentLoaded', function () {
+        const copyBtns = document.querySelectorAll('.toolbar-action');
+
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+
+                if (content) {
+                    // 获取纯文本内容
+                    const text = content.innerText;
+
+                    // 复制到剪贴板
+                    navigator.clipboard.writeText(text).then(() => {
+                        // 成功反馈
+                        const originalText = btn.textContent;
+                        btn.textContent = '✓ 已复制';
+                        btn.style.background = '#10b981';
+                        btn.style.color = 'white';
+
+                        // 2秒后恢复
+                        setTimeout(() => {
+                            btn.textContent = originalText;
+                            btn.style.background = '';
+                            btn.style.color = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('复制失败:', err);
+                        btn.textContent = '✗ 失败';
+                        setTimeout(() => {
+                            btn.textContent = 'COPY';
+                        }, 2000);
+                    });
+                }
+            });
+        });
+    });
+</script>
+<!-- Slide 11: Chapter 5 Title -->
+<div class="slide"
+    style="justify-content:center; align-items:center; background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第五章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">工具推荐与落地</h2>
+</div>
+
+<!-- Slide 12: Tool Recommendations -->
+<div class="slide">
+    <div class="header">
+        <h1>05. 工具生态</h1>
+        <div class="header-sub">Toolbox</div>
+    </div>
+    <div class="grid-3">
+        <div class="card">
+            <div class="section-title">对话/写作</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>ChatGPT (OpenAI)</strong>: 综合最强,插件生态丰富</li>
+                <li><strong>Claude (Anthropic)</strong>: 写作自然,长文本理解强</li>
+                <li><strong>Gemini (Google)</strong>: 多模态能力突出</li>
+                <li><strong>Kimi / 豆包</strong>: 国内访问友好,免费额度高</li>
+                <li><strong>文心一言 / 通义千问</strong>: 国产大模型代表</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title">PPT/视觉</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>Gamma</strong>: AI 生成 PPT,设计美观</li>
+                <li><strong>Napkin.ai</strong>: 文字转图表,演示利器</li>
+                <li><strong>NotebookLM</strong>: 知识库问答 + 播客生成</li>
+                <li><strong>Genspark</strong>: AI 搜索引擎,深度研究</li>
+                <li><strong>Midjourney</strong>: 图片生成天花板</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title">办公/数据</div>
+            <ul class="text-sm" style="line-height:2;">
+                <li><strong>Copilot (Microsoft)</strong>: Office 全家桶集成</li>
+                <li><strong>Notion AI</strong>: 笔记 + 知识库智能化</li>
+                <li><strong>ChatExcel</strong>: 自然语言操作表格</li>
+                <li><strong>Trae.ai</strong>: 数据分析自动化</li>
+                <li><strong>Rows</strong>: 智能电子表格</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Excel 转换工具推荐 -->
+    <div
+        style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); border-radius: 12px; border: 2px solid #ec4899;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1;">
+                <div style="font-size: 18px; font-weight: 700; color: #9f1239; margin-bottom: 8px;">
+                    Excel 转换工具
+                </div>
+                <div style="font-size: 14px; color: #be185d; line-height: 1.6;">
+                    AI 智能表格转换 - 快速将 Excel 数据转换为所需格式,提升数据处理效率
+                </div>
+            </div>
+            <div style="margin-left: 30px;">
+                <a href="https://moonai-demo5.jrit.top/" target="_blank" style="display: inline-block; padding: 12px 24px; background: #ec4899; color: white; 
+                          font-weight: 700; border-radius: 8px; text-decoration: none; 
+                          box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3); transition: all 0.2s;">
+                    立即使用 →
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 12px; font-size: 12px; color: #9f1239; opacity: 0.8;">
+            🔗 链接: moonai-demo5.jrit.top
+        </div>
+    </div>
+
+    <!-- 工具聚合网站推荐 -->
+    <div
+        style="margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; border: 2px solid #f59e0b;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1;">
+                <div style="font-size: 18px; font-weight: 700; color: #92400e; margin-bottom: 8px;">
+                    发现更多 AI 工具
+                </div>
+                <div style="font-size: 14px; color: #b45309; line-height: 1.6;">
+                    AI-Bot.cn - 国内最全的 AI 工具导航网站,收录 1000+ 工具,按场景分类,持续更新
+                </div>
+            </div>
+            <div style="margin-left: 30px;">
+                <a href="https://ai-bot.cn/" target="_blank" style="display: inline-block; padding: 12px 24px; background: #f59e0b; color: white; 
+                          font-weight: 700; border-radius: 8px; text-decoration: none; 
+                          box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); transition: all 0.2s;">
+                    立即访问 →
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Summary -->
+<div class="slide" style="justify-content:center; align-items:center; text-align: center;">
+    <i data-lucide="check-circle" style="width: 64px; height: 64px; color: var(--c-green); margin-bottom: 20px;"></i>
+    <h1 style="font-size: 40px; margin-bottom: 20px; color: var(--c-text);">拥抱变化，人机协作</h1>
+    <p class="text-p" style="max-width: 600px;">AI 不会取代人，但在未来，<b>会使用 AI 的人将取代不会使用 AI 的人</b>。</p>
+    <div style="margin-top: 40px;">
+        <button class="nav-btn" style="width: auto; padding: 0 30px; border-radius: 20px;" onclick="location.reload()">
+            <span style="margin-right:10px;">重新开始</span> <i data-lucide="rotate-ccw"></i>
+        </button>
+    </div>
+</div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

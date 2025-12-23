@@ -1,0 +1,337 @@
+<!-- Slide 3: Chapter 1 Title -->
+<div class="slide" style="justify-content:center; align-items:center; background: var(--g-primary); color:white;">
+    <h1 style="font-size: 60px; margin-bottom: 20px;">第一章</h1>
+    <h2 style="font-size: 32px; font-weight: 400;">原理：理解 AI / LLM，建立正确认知</h2>
+</div>
+
+<!-- Slide 4: 01. AI / LLM 是什么 -->
+<div class="slide">
+    <div class="header">
+        <h1>01. AI / LLM 是什么</h1>
+        <div class="header-sub">Building Correct Intuition</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Core Viewpoint -->
+        <div class="core-col">
+            <div class="core-viewpoint">
+                它是<span class="highlight">「概率预测引擎」</span><br>
+                而非「真理数据库」
+            </div>
+            <div class="core-desc">
+                不要把它当成搜索引或者百科全书。它的本质是根据上文，猜下一个概率最大的字。它不理解你的痛苦，它只是在做数学题。
+            </div>
+
+            <!-- Comparison Pill -->
+            <div
+                style="background: var(--c-surface-2); padding: 5px; border-radius: 30px; display: inline-flex; width: fit-content; gap: 5px;">
+                <div
+                    style="padding: 10px 25px; background: var(--c-red); color: white; border-radius: 25px; font-weight: bold; font-size: 14px;">
+                    ❌ 并不是: 理解 + 思考</div>
+                <div
+                    style="padding: 10px 25px; background: var(--c-green); color: white; border-radius: 25px; font-weight: bold; font-size: 14px;">
+                    ✅ 实际上: 统计 + 预测</div>
+            </div>
+        </div>
+
+        <!-- Right: Visual Process -->
+        <div class="secondary-panel">
+            <div class="neural-box">
+                <div class="neural-flow" style="display: flex; gap: 15px; align-items: stretch;">
+                    <!-- Input -->
+                    <div
+                        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+                        <span style="font-size:12px; color:var(--c-text-3); font-weight:bold;">INPUT</span>
+                        <div class="neural-node">"白日依山"</div>
+                    </div>
+
+                    <i data-lucide="arrow-right" style="color:var(--c-text-3); align-self:center;"></i>
+
+                    <!-- Probability Distribution (The Core Logic) -->
+                    <div
+                        style="flex:1; background:var(--c-text); color:white; padding:15px; border-radius:12px; font-family:monospace; font-size:14px; position:relative; overflow:hidden;">
+                        <!-- Highlight for selected -->
+                        <div
+                            style="position:absolute; top:15px; left:0; width:100%; height:26px; background:rgba(34, 197, 94, 0.2); border-left: 4px solid var(--c-green);">
+                        </div>
+
+                        <!-- List -->
+                        <div
+                            style="display:flex; justify-content:space-between; margin-bottom:6px; position:relative; z-index:2;">
+                            <span style="color:var(--c-green);">1. "尽"</span>
+                            <span>99.1%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.6;">
+                            <span>2. "高"</span>
+                            <span>0.5%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.4;">
+                            <span>3. "在"</span>
+                            <span>0.2%</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; opacity:0.2;">
+                            <span>...</span>
+                        </div>
+
+                        <!-- Parameter Note -->
+                        <div
+                            style="margin-top:10px; border-top:1px solid rgba(255,255,255,0.2); font-size:10px; color:rgba(255,255,255,0.6); padding-top:8px;">
+                            ⚙️ Temperature (0.0 - 1.0)<br>决定"选最大的"还是"以此概率随机抽"
+                        </div>
+                    </div>
+
+                    <i data-lucide="arrow-right" style="color:var(--c-text-3); align-self:center;"></i>
+
+                    <!-- Output -->
+                    <div
+                        style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+                        <span style="font-size:12px; color:var(--c-text-3); font-weight:bold;">OUTPUT</span>
+                        <div class="neural-node"
+                            style="border-color:var(--c-green); color:var(--c-green-600); box-shadow: 0 0 15px rgba(34,197,94,0.3);">
+                            "尽"</div>
+                    </div>
+                </div>
+                <div style="font-size:13px; color:var(--c-text-2); text-align:center; margin-top:10px;">
+                    它并不是真的懂这句诗，它只是计算出：<br>在"白日依山"后面接"尽"的概率最大。
+                </div>
+            </div>
+
+            <!-- Insight Card -->
+            <div class="flow-card" style="border-color: var(--c-primary);">
+                <div class="flow-step-number" style="background: none; padding: 0;">💡</div>
+                <div class="flow-content">
+                    <h4>所以，输入质量决定输出质量</h4>
+                    <p>因为它是算出来的，如果你给的条件（Prompt）模糊，它的计算结果就会发散（胡说八道）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: 02. AI 的能力边界 -->
+<div class="slide">
+    <div class="header">
+        <h1>02. AI 的能力边界</h1>
+        <div class="header-sub">Know When NOT to Use It</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: Core Viewpoint (The Filter) -->
+        <div class="core-col">
+            <div class="core-viewpoint">
+                不要让它<br>做<span class="highlight">「高风险决策」</span>
+            </div>
+            <div class="core-desc">
+                AI 会产生幻觉 (Hallucination)。在用它之前，先过一遍这个「三步过滤法」。
+            </div>
+
+            <!-- The Filter Process -->
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="flow-card">
+                    <div class="flow-step-number">1</div>
+                    <div class="flow-content">
+                        <h4>要负法律/财务责任吗？</h4>
+                        <p style="color: var(--c-red);">如果是 → 必须人工审核，或不用 AI</p>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step-number">2</div>
+                    <div class="flow-content">
+                        <h4>必须 100% 事实准确吗？</h4>
+                        <p style="color: var(--c-amber-600);">如果是 → 慎用，AI 可能会瞎编数据</p>
+                    </div>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-step-number">3</div>
+                    <div class="flow-content">
+                        <h4>需要真实且细腻的情感吗？</h4>
+                        <p style="color: var(--c-text-2);">如果是 → AI 写的情感通常很"油腻"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Examples (Visual Balance) -->
+        <div class="secondary-panel" style="justify-content: center;">
+            <div style="display: grid; gap: 20px;">
+                <!-- Good At -->
+                <div
+                    style="background: var(--c-surface-1); padding: 25px; border-radius: 12px; border: 1px solid var(--c-border);">
+                    <div
+                        style="display:flex; align-items:center; gap:10px; margin-bottom:15px; color:var(--c-green-600);">
+                        <i data-lucide="check-circle"></i>
+                        <h3 style="margin:0; font-size:20px;">大胆用 (Sweet Spot)</h3>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <span class="tag" style="justify-content:center;">总结摘要</span>
+                        <span class="tag" style="justify-content:center;">润色文字</span>
+                        <span class="tag" style="justify-content:center;">格式转换</span>
+                        <span class="tag" style="justify-content:center;">创意脑暴</span>
+                        <span class="tag" style="justify-content:center;">写代码 (Copilot)</span>
+                        <span class="tag" style="justify-content:center;">翻译</span>
+                    </div>
+                </div>
+
+                <!-- Bad At -->
+                <div
+                    style="background: var(--c-surface-1); padding: 25px; border-radius: 12px; border: 1px solid var(--c-border); opacity: 0.8;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px; color:var(--c-red);">
+                        <i data-lucide="x-circle"></i>
+                        <h3 style="margin:0; font-size:20px;">别太信 (Danger Zone)</h3>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">医疗诊断</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">法律咨询</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">复杂数学逻辑</span>
+                        <span class="tag"
+                            style="justify-content:center; background:var(--c-red-50); color:var(--c-red);">实时新闻查询</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: 03. 提示词与工程化能力 -->
+<div class="slide">
+    <div class="header">
+        <h1>03. 提示词与工程化能力</h1>
+        <div class="header-sub">Structured Input = Quality Output</div>
+    </div>
+
+    <div class="split-layout">
+        <!-- Left: The Formula (Big & Visual) -->
+        <div class="core-col">
+            <div class="core-viewpoint" style="font-size: 32px; margin-bottom: 20px;">
+                好结果 = <br><span class="highlight">结构化指令</span> + <span class="highlight">工程化辅助</span>
+            </div>
+
+            <!-- The Burger Formula -->
+            <div class="formula-stack" style="width: 100%; margin-bottom: 30px;">
+                <div class="formula-block" style="background: #4338ca; padding: 12px;">🧔 立角色 (Role)</div>
+                <div class="formula-plus" style="font-size: 16px; margin: 4px 0;">+</div>
+                <div class="formula-block" style="background: #15803d; padding: 12px;">📋 派任务 (Task)</div>
+                <div class="formula-plus" style="font-size: 16px; margin: 4px 0;">+</div>
+                <div class="formula-block" style="background: #a16207; padding: 12px;">⛓️ 定约束 (Constraints)</div>
+            </div>
+
+            <div class="core-desc" style="font-size: 16px; margin-bottom: 0;">
+                提示词只是"软技能"，真正的威力在于理解<strong style="color:var(--c-text);">工程化原理</strong>。
+            </div>
+        </div>
+
+        <!-- Right: Engineering Mindset (Process) -->
+        <div class="secondary-panel">
+
+            <!-- Context & Reset Point -->
+            <div class="flow-card" style="flex-direction: column; gap: 12px; align-items: stretch;">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <div class="flow-step-number">原理 1</div>
+                    <h4 style="margin:0;">上下文其实是"拼接文本"</h4>
+                </div>
+
+                <!-- Visualization of context concatenation -->
+                <div
+                    style="background: var(--c-surface-2); padding: 10px; border-radius: 6px; font-family: monospace; font-size: 10px; color: var(--c-text-2); border: 1px dashed var(--c-border);">
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-primary);">[User]</span>: 你好</div>
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-green);">[AI]</span>: 你好，请问有什么帮您？</div>
+                    <div style="margin-bottom:4px;"><span style="color:var(--c-primary);">[User]</span>: 帮我写个文案...</div>
+                    <div style="color:var(--c-text-3);">... (每次对话，其实都是把上面所有内容打包发给 AI) ...</div>
+                </div>
+
+                <p style="font-size: 13px;">
+                    <strong>👉 为什么要"及时重置"？</strong><br>
+                    因为 AI 实际上没有记忆。所谓的"多轮对话"只是把历史记录<b>一次性喂给它</b>。
+                    如果上个任务做了财报分析，不点重置直接写诗，历史的"财报数据"会作为噪音干扰创作。
+                </p>
+            </div>
+
+            <!-- Tool Use Point -->
+            <div class="flow-card" style="flex-direction: column; gap: 12px; align-items: stretch;">
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <div class="flow-step-number">原理 2</div>
+                    <h4 style="margin:0;">AI 没有手，工程化是它的外骨骼</h4>
+                </div>
+
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--c-surface-2); padding: 10px; border-radius: 8px;">
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 24px; margin-bottom: 4px;">🧠</div>
+                        <div style="font-size: 12px; font-weight: bold;">LLM (大脑)</div>
+                        <div style="font-size: 10px; color: var(--c-text-2);">只输出文本指令</div>
+                        <div style="font-size: 10px; color: var(--c-primary); margin-top:2px;">"去调用计算器..."</div>
+                    </div>
+                    <i data-lucide="arrow-right" style="color: var(--c-text-3); width: 16px;"></i>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 24px; margin-bottom: 4px;">⚙️</div>
+                        <div style="font-size: 12px; font-weight: bold;">工程层 (App)</div>
+                        <div style="font-size: 10px; color: var(--c-text-2);">拦截指令并执行</div>
+                        <div style="font-size: 10px; color: var(--c-green); margin-top:2px;">执行 python 代码</div>
+                    </div>
+                </div>
+
+                <p style="font-size: 13px;">
+                    <strong>👉 为什么它能联网/算数？</strong><br>
+                    ChatGPT/豆包并不是自己算的。它们只是生成了"调用搜索"的文本指令，然后<b>软件程序</b>去执行了搜索，再把结果喂回给 AI 阅读。
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: 04. AI 落地通用框架 -->
+<div class="slide">
+    <div class="header">
+        <h1>04. AI 落地通用框架</h1>
+        <div class="header-sub">Core Framework for Implementation</div>
+    </div>
+
+    <!-- Center layout for this slide to see big picture -->
+    <div
+        style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:60px;">
+
+        <div class="core-viewpoint" style="text-align:center;">
+            面对新场景<br>请遵循<span class="highlight">「价值—方法—边界」</span>思考模型
+        </div>
+
+        <!-- The Big Process Arrow -->
+        <div class="framework-arrow" style="width: 100%; max-width: 900px; box-shadow: var(--sh-xl);">
+            <div class="framework-step" style="background: var(--c-green);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 1</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Why: 价值</div>
+                <div style="font-size: 16px; line-height: 1.4;">这事儿值得用 AI 吗？<br>是高频重复，还是需要创意？</div>
+            </div>
+            <div class="framework-step" style="background: var(--c-primary);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 2</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">How: 方法</div>
+                <div style="font-size: 16px; line-height: 1.4;">拆解任务 + 黄金 Prompt + <br>必要的工具链</div>
+            </div>
+            <div class="framework-step" style="background: var(--c-amber-600);">
+                <div style="font-size: 14px; opacity: 0.8; margin-bottom: 5px;">STEP 3</div>
+                <div style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Limits: 边界</div>
+                <div style="font-size: 16px; line-height: 1.4;">人工必须在哪里介入？<br>最坏结果是什么？</div>
+            </div>
+        </div>
+
+        <!-- Application Examples -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:30px; width: 100%; max-width: 900px;">
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">文档与文案</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">草稿 / 摘要 / 润色</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">PPT 制作</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">结构 / 大纲 / 内容填充</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-weight: bold; color: var(--c-text); margin-bottom: 5px;">数据处理</div>
+                <div style="font-size: 14px; color: var(--c-text-2);">清洗 / 提取 / 简单分析</div>
+            </div>
+        </div>
+
+    </div>
+</div>

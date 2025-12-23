@@ -1,0 +1,695 @@
+/* Chapter 2: 文档与文案 - PPT 演示优化版 */
+
+/* =========================================
+   Page 6: 核心价值 - 三重角色
+   ========================================= */
+.docs-role-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px;
+    height: 100%;
+    align-items: center;
+}
+
+.docs-role-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.docs-role-title-en {
+    font-size: 24px;
+    color: var(--c-primary);
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.docs-role-title-cn {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--c-text);
+    background: linear-gradient(135deg, var(--c-text) 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.docs-role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    height: 100%;
+    /* Stretch to fill */
+    align-content: center;
+}
+
+.role-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    border: 1px solid var(--c-border);
+    box-shadow: var(--sh-card-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.role-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sh-card-lg);
+    border-color: var(--c-primary);
+}
+
+.role-card-icon {
+    font-size: 56px;
+    margin-bottom: 24px;
+    background: var(--c-surface-2);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.role-card-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: 16px;
+}
+
+.role-card-desc {
+    font-size: 16px;
+    color: var(--c-text-2);
+    line-height: 1.6;
+    margin-bottom: auto;
+    /* Push footer down */
+}
+
+/* 移除列表，改为一个核心标签 */
+.role-core-tag {
+    margin-top: 24px;
+    padding: 8px 16px;
+    background: var(--c-surface-1);
+    color: var(--c-primary);
+    font-weight: 600;
+    border-radius: 100px;
+    font-size: 14px;
+}
+
+.docs-role-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.footer-quote {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 12px 32px;
+    border-radius: 100px;
+    border: 1px solid var(--c-border);
+    font-size: 18px;
+    color: var(--c-text-2);
+    box-shadow: var(--sh-card-sm);
+}
+
+.footer-quote span {
+    color: var(--c-primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   Interactive Tabs Module (Slide 7 specific)
+   ========================================= */
+.interactive-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    box-shadow: var(--sh-card-sm);
+    overflow: hidden;
+}
+
+.step-tabs {
+    display: flex;
+    background: var(--c-surface-1);
+    border-bottom: 1px solid var(--c-border);
+}
+
+.step-tab {
+    flex: 1;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-right: 1px solid var(--c-border);
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.step-tab:last-child {
+    border-right: none;
+}
+
+.step-tab:hover {
+    background: var(--c-surface-2);
+}
+
+.step-tab.active {
+    background: white;
+    box-shadow: inset 0 2px 0 var(--c-primary);
+}
+
+.step-tab .tab-badge {
+    font-size: 12px;
+    color: var(--c-text-3);
+    font-weight: 700;
+}
+
+.step-tab.active .tab-badge {
+    color: var(--c-primary);
+}
+
+.step-tab .tab-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--c-text);
+}
+
+.step-content-box {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+    display: none;
+    /* Hide by default */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.step-content-box.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-content-text {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 15px;
+    /* Slightly larger for presentation */
+    line-height: 1.8;
+    color: var(--c-text-2);
+    white-space: pre-wrap;
+}
+
+/* =========================================
+   Page 7-12: PPT 演示优化布局
+   ========================================= */
+
+/* 头部 Header 优化 */
+.method-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--c-surface-2);
+}
+
+.method-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--c-text);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.method-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--c-text-3);
+    background: var(--c-surface-2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 主布局：左右分栏 */
+.ppt-method-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    /* 左侧流程略宽 */
+    gap: 40px;
+    height: calc(100% - 100px);
+    /* 减去 Header 高度 */
+    align-items: stretch;
+}
+
+/* 左侧：流程图 */
+.process-flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    padding-left: 30px;
+    /* 给连接线留空间 */
+}
+
+/* 左侧连接线 */
+.process-flow::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 40px;
+    bottom: 40px;
+    width: 4px;
+    background: var(--c-surface-2);
+    border-radius: 2px;
+}
+
+.process-step {
+    background: white;
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    box-shadow: var(--sh-card-sm);
+    transition: transform 0.2s;
+}
+
+.process-step:hover {
+    transform: translateX(5px);
+    border-color: var(--c-primary);
+}
+
+/* 步骤节点圆点 */
+.process-step::after {
+    content: '';
+    position: absolute;
+    left: -26px;
+    /* Adjust based on padding-left of flow */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 4px solid var(--c-primary);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.step-badge {
+    background: var(--c-primary-light);
+    color: var(--c-primary);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.step-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--c-text);
+}
+
+.step-content {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 14px;
+    color: var(--c-text-2);
+    background: var(--c-surface-1);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    border: 1px dashed var(--c-border);
+}
+
+/* 右侧：核心洞察 */
+.insight-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 绝对核心观点卡片 - 视觉最重要 */
+.core-insight-card {
+    background: linear-gradient(135deg, var(--c-surface-1) 0%, white 100%);
+    border-left: 6px solid var(--c-primary);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--sh-card-md);
+    flex: 1;
+    /* 占据主要空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.core-insight-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--c-text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.core-insight-text {
+    font-size: 18px;
+    /* 大字号，易扫读 */
+    line-height: 1.6;
+    color: var(--c-text-2);
+}
+
+.core-insight-text strong {
+    color: var(--c-primary);
+    font-weight: 700;
+}
+
+/* 次级信息组 */
+.secondary-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: auto;
+}
+
+.info-card {
+    background: var(--c-surface-1);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.info-card h4 {
+    font-size: 14px;
+    color: var(--c-text-3);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: var(--c-text-2);
+    line-height: 1.4;
+}
+
+/* 高亮强调色 */
+.text-highlight {
+    color: var(--c-primary);
+    font-weight: 600;
+}
+
+/* =========================================
+   Page 2: 核心价值 - 三重角色
+   ========================================= */
+.docs-role-layout {
+    display: flex;
+    height: 100%;
+    gap: 60px;
+    align-items: center;
+}
+
+.docs-role-left {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.docs-role-title-en {
+    font-size: 24px;
+    color: var(--c-primary);
+    opacity: 0.8;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.docs-role-title-cn {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--c-text);
+    margin-bottom: 30px;
+}
+
+.docs-role-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 70%;
+}
+
+.role-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 24px;
+    border: 1px solid var(--c-border);
+    box-shadow: var(--sh-card-sm);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sh-card-md);
+    border-color: var(--c-primary);
+}
+
+.role-card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.role-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: 12px;
+}
+
+.role-card-desc {
+    font-size: 16px;
+    color: var(--c-text-2);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.role-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14px;
+    color: var(--c-text-2);
+    margin-bottom: 8px;
+}
+
+.role-list li::before {
+    content: "•";
+    color: var(--c-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.role-tag {
+    background: var(--c-surface-2);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--c-primary-900);
+    font-weight: 600;
+    text-align: center;
+}
+
+.docs-role-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    right: 60px;
+    background: linear-gradient(90deg, var(--c-surface-2) 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 20px 30px;
+    border-left: 6px solid var(--c-primary);
+    border-radius: 4px;
+}
+
+.footer-quote {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--c-text);
+}
+
+.footer-quote span {
+    color: var(--c-primary);
+    font-weight: 800;
+}
+
+/* =========================================
+   Page 3-8: 方法论模板
+   ========================================= */
+.docs-method-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: auto 1fr;
+    gap: 30px;
+    height: 100%;
+}
+
+.method-header {
+    grid-column: 1 / -1;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--c-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.method-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--c-text);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.method-subtitle {
+    font-size: 16px;
+    color: var(--c-text-3);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 左侧：提示词区域 */
+.prompt-container {
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid var(--c-border);
+    padding: 30px;
+    height: 100%;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #334155;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+    white-space: pre-wrap;
+}
+
+/* 定义提示词内部的层级 */
+.prompt-step {
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 20px;
+}
+
+.prompt-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.prompt-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #475569;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+/* 右侧：要点区域 */
+.tips-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.tip-card {
+    background: white;
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--sh-card-sm);
+}
+
+.tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--c-text);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--c-surface-2);
+}
+
+.tip-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tip-content li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--c-text-2);
+    line-height: 1.5;
+}
+
+.tip-content li::before {
+    content: "•";
+    color: var(--c-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
